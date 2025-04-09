@@ -9,4 +9,5 @@ export interface IProject {
 export interface IContact {
   img: string;
   link: string;
+  label: string
 }

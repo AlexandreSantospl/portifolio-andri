@@ -12,6 +12,7 @@ export default function Fourth() {
       fontSize={"3.65rem"}
       flexDir={"column"}
       gap={12}
+      id="projetos"
     >
       <Flex flexDir={"column"} align={"center"} justify={"space-evenly"}>
         <Text fontSize={"3rem"} color={"gray.100"} fontWeight={"bold"}>
