@@ -42,32 +42,22 @@ export default function FifthFooter() {
                 <Text
                   fontSize="1.5rem"
                   fontWeight="bold"
+                  color={"#13B0F5"}
                   bgGradient="linear(to-tl, #13B0F5, #CA24B4)"
                   bgClip="text"
                   cursor="pointer"
                   onClick={() => scrollToSection("Inicio")}
                   whiteSpace="nowrap"
                 >
-                  {"{Dev}"}
+                  {"{ Gabi }"}
                 </Text>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Text
-                  fontWeight="bold"
-                  bgGradient="linear(to-tl, #CA24B4, #13B0F5)"
-                  bgClip="text"
-                  cursor="pointer"
-                  onClick={() => scrollToSection("Inicio")}
-                  whiteSpace="nowrap"
-                >
-                  {"Duarte"}
-                </Text>
-              </motion.div>
+
             </Flex>
 
             <Flex gap={14} align="center">
               <Flex gap={14}>
-                {["+55 (53) 9 91085073", "Alexandresantospl283@gmail.com"].map((item, index) => (
+                {["+55 (53) 991683603", "gabrielacardosodarosa4@gmail.com"].map((item, index) => (
                   <motion.div key={index} whileHover={{ scale: 1.05 }}>
                     <Text
                       fontSize="1.125rem"

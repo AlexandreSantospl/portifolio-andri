@@ -1,5 +1,5 @@
 import { Avatar, Flex, Text } from "@chakra-ui/react";
-import MyPicture from "../../../assets/imagens/myPicture.png";
+import MyPicture from "../../../assets/imagens/myPicture.jpg";
 import { motion } from "framer-motion";
 import { keyframes } from "@chakra-ui/system";
 
@@ -27,7 +27,7 @@ export default function Second() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Text display="flex" alignItems="center">
+            <Text display="flex" alignItems="center" color={"#13B0F5"}>
               Olá
               <motion.span
                 animate={{
@@ -52,7 +52,7 @@ export default function Second() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Text>Meu nome é</Text>
+            <Text color={"#13B0F5"}>Meu nome é</Text>
           </motion.div>
 
           <motion.div
@@ -67,20 +67,7 @@ export default function Second() {
               animation={`${gradientFlow} 6s ease infinite`}
               bgClip="text"
             >
-              Alexandre Duarte
-            </Text>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <Text fontSize="2.5rem" opacity={0.9}>
-              Transformo ideias em{" "}
-              <Text as="span" fontStyle="italic">
-                soluções digitais
-              </Text>
+              Gabriela da Rosa
             </Text>
           </motion.div>
         </Flex>

@@ -9,7 +9,7 @@ export default function FirstHeader() {
   const { isOpen } = useDisclosure();
   const navRef = useRef<HTMLDivElement>(null);
 
-  const sections = ["Inicio", "Conhecimentos", "Projetos", "Contato"];
+  const sections = ["Inicio", "Cursos", "Expêriencias", "Contato"];
 
   const scrollToSection = (section: string) => {
     setActiveSection(section);
@@ -83,19 +83,6 @@ export default function FirstHeader() {
         fontFamily={"Poppins"}
       >
         <Flex flexDir="column" justify="center" w="30%">
-          <Flex justify="flex-start">
-            <Text
-              fontSize={"1.5rem"}
-              fontWeight="bold"
-              bgGradient="linear(to-tl, #13B0F5, #CA24B4)"
-              bgClip="text"
-              cursor="pointer"
-              onClick={() => scrollToSection("Inicio")}
-            >
-              {"{Dev}"}
-            </Text>
-          </Flex>
-
           <Text
             fontWeight="bold"
             bgGradient="linear(to-tl, #CA24B4, #13B0F5)"
@@ -103,7 +90,7 @@ export default function FirstHeader() {
             cursor="pointer"
             onClick={() => scrollToSection("Inicio")}
           >
-            {"Duarte"}
+            {"{ Gabi }"}
           </Text>
         </Flex>
 
@@ -127,6 +114,7 @@ export default function FirstHeader() {
                   }}
                   fontWeight={activeSection === item ? "bold" : "normal"}
                   position="relative"
+                  color={"#13B0F5"}
                   _after={{
                     content: '""',
                     position: "absolute",

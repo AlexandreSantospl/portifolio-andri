@@ -17,8 +17,7 @@ function App() {
       id="inicio"
     >
       <Second />
-      <Third />
-      <Fourth />
+    
       <FifthFooter />
     </Flex>
   );
