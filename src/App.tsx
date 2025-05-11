@@ -1,7 +1,5 @@
 import { Flex } from "@chakra-ui/react";
 import Second from "./components/session/second";
-import Third from "./components/session/third";
-import Fourth from "./components/session/fourth";
 import FifthFooter from "./components/session/fifth";
 
 function App() {
