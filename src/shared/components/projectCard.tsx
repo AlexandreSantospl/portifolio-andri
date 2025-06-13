@@ -7,6 +7,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
   image: string;
@@ -160,7 +161,8 @@ export const ProjectCard = ({
         )}
 
         <Button
-          onClick={() => window.open(link)}
+          as={Link}
+          to={`/projetos/${link}`}
           borderColor="#885784"
           borderRadius="24px"
           border="1px"

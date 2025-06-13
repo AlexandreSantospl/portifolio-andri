@@ -16,6 +16,7 @@ import thirdLifeSync from "../../../assets/projects/lifesync/thirdLifeSync.svg";
 import fourthLifeSync from "../../../assets/projects/lifesync/fourthLifeSync.svg";
 
 type FeatureSectionData = {
+  slug: string;
   title: string;
   descriptionHtml: string;
   buttonLink: string;
@@ -28,6 +29,7 @@ type FeatureSectionData = {
 
 export const featureSections: FeatureSectionData[] = [
   {
+    slug: "isotron",
     title: "Isotron",
     descriptionHtml: `
       <p>
@@ -50,6 +52,7 @@ export const featureSections: FeatureSectionData[] = [
     imageBottomRight: forthIsotron,
   },
   {
+    slug: "lifemed",
     title: "LifeMed",
     descriptionHtml: `
       <p>
@@ -69,6 +72,7 @@ export const featureSections: FeatureSectionData[] = [
     imageBottomRight: fourthLifeMed,
   },
   {
+    slug: "luna",
     title: "Luna",
     descriptionHtml: `
      <p>
@@ -87,6 +91,7 @@ export const featureSections: FeatureSectionData[] = [
     imageBottomRight: fourthLuna,
   },
   {
+    slug: "lifesync",
     title: "LifeSync",
     descriptionHtml: `
     <p>

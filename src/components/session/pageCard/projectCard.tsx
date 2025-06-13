@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Skeleton, Text } from "@chakra-ui/react";
 
 type FeatureSectionProps = {
   title: string;
@@ -10,6 +10,15 @@ type FeatureSectionProps = {
   imageBottomLeftBottom: string;
   imageBottomRight: string;
 };
+ const skeletonProps = {
+    borderRadius: "24px",
+    startColor: "gray.100",
+    endColor: "gray.200",
+    fadeDuration: 0.4,
+    w: "100%",
+    h: "100%",
+    boxShadow: "md",
+  };
 
 export const FeatureSection = ({
   title,
@@ -78,18 +87,38 @@ export const FeatureSection = ({
             h="80%"
             objectFit="cover"
             borderRadius={"24px"}
+            fallback={<Skeleton {...skeletonProps} />}
+
           />
         </Box>
       </Flex>
 
       <Flex w="100%" gap="38px">
         <Flex w="50%" direction="column" gap="48px">
-          <Image src={imageBottomLeftTop} w="100%" objectFit="cover" />
-          <Image src={imageBottomLeftBottom} w="100%" objectFit="cover" />
+          <Image
+            src={imageBottomLeftTop}
+            w="100%"
+            objectFit="cover"
+            fallback={<Skeleton {...skeletonProps} />}
+
+          />
+          <Image
+            src={imageBottomLeftBottom}
+            w="100%"
+            objectFit="cover"
+            fallback={<Skeleton {...skeletonProps} />}
+
+          />
         </Flex>
 
         <Flex w="50%" justify="center" align="center">
-          <Image src={imageBottomRight} w="100%" h={"90%"} />
+          <Image
+            src={imageBottomRight}
+            w="100%"
+            h={"90%"}
+            fallback={<Skeleton {...skeletonProps} />}
+
+          />
         </Flex>
       </Flex>
     </Flex>

@@ -18,7 +18,7 @@ export default function Third() {
       img: project1,
       description:
         "O projeto consistiu no desenvolvimento de um sistema de gestão e estatísticas para uma empresa que comercializa produtos radioativos para clínicas e hospitais. ",
-      link: "",
+      link: "isotron",
       imagePosition: "right",
     },
     {
@@ -26,7 +26,7 @@ export default function Third() {
       img: project2,
       description:
         "Este projeto foi desenvolvido com foco em criar uma plataforma digital que funciona como um e-commerce, mas com um modelo B2B voltado exclusivamente para o setor de saúde.",
-      link: "",
+      link: "lifemed",
       imagePosition: "left",
     },
     {
@@ -34,7 +34,7 @@ export default function Third() {
       img: project3,
       description:
         "Este projeto foi desenvolvido com o objetivo de promover uma melhor compreensão e qualidade do sono por meio do monitoramento contínuo dos hábitos noturnos do usuário.",
-      link: "",
+      link: "luna",
       imagePosition: "right",
     },
     {
@@ -42,7 +42,7 @@ export default function Third() {
       img: project4,
       description:
         "A interface deste projeto foi cuidadosamente pensada para garantir uma navegação fluida e acessível, com foco na organização e na usabilidade.",
-      link: "",
+      link: "lifesync",
       imagePosition: "left",
     },
   ];
@@ -59,9 +59,8 @@ export default function Third() {
       fontSize={"3.65rem"}
       flexDir={"column"}
       overflow="hidden"
-      id="conhecimentos"
     >
-      <Box textAlign="center" w="fit-content" mx="auto">
+      <Box textAlign="center" w="fit-content" mx="auto" id="projetos">
         <Text
           fontFamily={"Playfair Display"}
           fontSize={"4rem"}

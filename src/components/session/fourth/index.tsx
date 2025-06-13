@@ -63,7 +63,7 @@ export default function Fourth() {
       fontSize={"3.65rem"}
       flexDir={"column"}
       overflow="hidden"
-      id="conhecimentos"
+      id="rodape"
     >
       <Flex flexDir="row" gap="2rem">
         {contact.map((contact) => (
