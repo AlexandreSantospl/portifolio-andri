@@ -1,58 +1,85 @@
-import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
-import CardProjects from "./cardProject";
-import { projects } from "../../../shared/constants/projects";
+import { Flex, Image, Text } from "@chakra-ui/react";
+import be from "../../../assets/icons/be.svg";
+import email from "../../../assets/icons/email.svg";
+import instagram from "../../../assets/icons/instagram.svg";
+import linkedin from "../../../assets/icons/linkedin.svg";
+import wpp from "../../../assets/icons/wpp.svg";
+import styled from "@emotion/styled";
+
+const IconButton = styled.div`
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+`;
+
 export default function Fourth() {
+  const contact: {
+    img: string;
+
+    link: string;
+  }[] = [
+    {
+      img: instagram,
+      link: "https://www.instagram.com/andri_brentano?igsh=ZnNmZTA3OXV4YW9i",
+    },
+    {
+      img: linkedin,
+      link: "https://www.linkedin.com/in/andrieli-brentano",
+    },
+    {
+      img: be,
+      link: "https://www.behance.net/andrielbrentan",
+    },
+    {
+      img: email,
+      link: "mailto:andri.brentano@gmail.com",
+    },
+    {
+      img: wpp,
+      link: "https://wa.me/5191459386",
+    },
+  ];
+
   return (
     <Flex
-      w={"85%"}
-      h={"fit-content"}
+      w={"70%"}
+      h={"100%"}
+      pt={"6rem"}
+      gap="3rem"
       align="center"
+      pb={"5rem"}
       justify="space-evenly"
       textColor={"gray.100"}
       fontSize={"3.65rem"}
       flexDir={"column"}
-      gap={12}
-      id="projetos"
+      overflow="hidden"
+      id="conhecimentos"
     >
-      <Flex flexDir={"column"} align={"center"} justify={"space-evenly"}>
-        <Text fontSize={"3rem"} color={"gray.100"} fontWeight={"bold"}>
-          Projetos
-        </Text>
-        <Text fontSize={"2rem"} color={"gray.200"} fontWeight={"bold"}>
-          Ideias que construí até agora
+      <Flex flexDir="row" gap="2rem">
+        {contact.map((contact) => (
+          <IconButton key={contact.link}>
+            <a href={contact.link} target="_blank" rel="noopener noreferrer">
+              <Image src={contact.img} alt={contact.link} />
+            </a>
+          </IconButton>
+        ))}
+      </Flex>
+
+      <Flex>
+        <Text fontFamily={"Poppins"} fontSize={"1rem"} color={"#828282"}>
+          Andrieli Brentano 2025
         </Text>
       </Flex>
-      <Grid
-        templateColumns="repeat(3, 1fr)"
-        w="100%"
-        h="fit-content"
-        gap={14}
-        justifyContent="center"
-      >
-        {projects.map(({ description, img, link, techs, title }, index) => (
-          <GridItem colSpan={1} key={index + link} minW="280px">
-            <Flex
-              w="100%"
-              align="center"
-              justify={
-                index % 3 === 0
-                  ? "flex-start"
-                  : index % 3 === 2
-                  ? "flex-end"
-                  : "center"
-              }
-            >
-              <CardProjects
-                description={description}
-                img={img}
-                link={link}
-                techs={techs}
-                title={title}
-              />
-            </Flex>
-          </GridItem>
-        ))}
-      </Grid>
     </Flex>
   );
 }

@@ -1,61 +1,58 @@
-import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { icons } from "./icons";
-
-const AnimatedIcon = ({ icon, onClick, index }: any) => {
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-      x: index % 2 === 0 ? -30 : 30,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      rotate: 0,
-      transition: {
-        delay: index * 0.05,
-        duration: 0.6,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-    hover: {
-      scale: 1.15,
-      rotate: [0, 10, -10, 0],
-      transition: { duration: 0.5 },
-    },
-  };
-
-  return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      whileHover="hover"
-      variants={variants}
-    >
-      <img
-        src={icon}
-        alt={icon}
-        style={{
-          width: "6.5rem",
-          height: "6.5rem",
-          cursor: "pointer",
-          objectFit: "contain",
-          filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.3))",
-        }}
-        onClick={onClick}
-      />
-    </motion.div>
-  );
-};
+import { Box, Flex, Text } from "@chakra-ui/react";
+import { ProjectCard } from "../../../shared/components/projectCard";
+import project1 from "../../../assets/imagens/project1.png";
+import project2 from "../../../assets/imagens/project2.png";
+import project3 from "../../../assets/imagens/project3.png";
+import project4 from "../../../assets/imagens/project4.png";
 
 export default function Third() {
+  const projects: {
+    img: string;
+    title: string;
+    description: string;
+    link: string;
+    imagePosition: "left" | "right";
+  }[] = [
+    {
+      title: "Isotron",
+      img: project1,
+      description:
+        "O projeto consistiu no desenvolvimento de um sistema de gestão e estatísticas para uma empresa que comercializa produtos radioativos para clínicas e hospitais. ",
+      link: "",
+      imagePosition: "right",
+    },
+    {
+      title: "LifeMed",
+      img: project2,
+      description:
+        "Este projeto foi desenvolvido com foco em criar uma plataforma digital que funciona como um e-commerce, mas com um modelo B2B voltado exclusivamente para o setor de saúde.",
+      link: "",
+      imagePosition: "left",
+    },
+    {
+      title: "Luna",
+      img: project3,
+      description:
+        "Este projeto foi desenvolvido com o objetivo de promover uma melhor compreensão e qualidade do sono por meio do monitoramento contínuo dos hábitos noturnos do usuário.",
+      link: "",
+      imagePosition: "right",
+    },
+    {
+      title: "LifeSync",
+      img: project4,
+      description:
+        "A interface deste projeto foi cuidadosamente pensada para garantir uma navegação fluida e acessível, com foco na organização e na usabilidade.",
+      link: "",
+      imagePosition: "left",
+    },
+  ];
+
   return (
     <Flex
-      w={"85%"}
-      h={"88vh"}
+      w={"70%"}
+      h={"100%"}
+      pt={"6rem"}
+      gap="5rem"
       align="center"
       justify="space-evenly"
       textColor={"gray.100"}
@@ -64,41 +61,38 @@ export default function Third() {
       overflow="hidden"
       id="conhecimentos"
     >
-      <Flex flexDir={"column"} align={"center"}>
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+      <Box textAlign="center" w="fit-content" mx="auto">
+        <Text
+          fontFamily={"Playfair Display"}
+          fontSize={"4rem"}
+          fontWeight={"bold"}
+          color={"black"}
         >
-          <Text fontSize={"3rem"} color={"gray.100"} fontWeight={"bold"}>
-            Meus conhecimentos
-          </Text>
-          <Text fontSize={"2rem"} color={"gray.200"} fontWeight={"bold"}>
-            Tecnologias que impulsionam meus projetos
-          </Text>
-        </motion.div>
-      </Flex>
+          Projetos
+        </Text>
 
-      <Grid templateColumns="repeat(6, 1fr)" w={"100%"} gap={14}>
-        {icons.map(({ icon, onClick }, index) => (
-          <GridItem colSpan={1} key={index}>
-            <Flex
-              w={"100%"}
-              align={"center"}
-              paddingX={4}
-              justify={
-                index === 0 || index === 6 || index === 12
-                  ? "flex-start"
-                  : index === 5 || index === 11 || index === 17
-                  ? "flex-end"
-                  : "center"
-              }
-            >
-              <AnimatedIcon icon={icon} onClick={onClick} index={index} />
-            </Flex>
-          </GridItem>
+        <Box
+          w="60%"
+          h="4px"
+          bg="#885784"
+          mx="auto"
+          mt="0.25rem"
+          borderRadius="2px"
+        />
+      </Box>
+
+      <Flex flexDir={"column"} gap={"5rem"} pb={"10rem"}>
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            image={project.img}
+            title={project.title}
+            description={project.description}
+            imagePosition={project.imagePosition}
+            link={project.link}
+          />
         ))}
-      </Grid>
+      </Flex>
     </Flex>
   );
 }

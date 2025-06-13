@@ -1,97 +1,77 @@
-import { Avatar, Flex, Text } from "@chakra-ui/react";
-import MyPicture from "../../../assets/imagens/myPicture.jpg";
-import { motion } from "framer-motion";
-import { keyframes } from "@chakra-ui/system";
-
-const gradientFlow = keyframes`
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-`;
+import { Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
+import myPicture from "../../../assets/imagens/myPicture.png";
 
 export default function Second() {
+  const titleFontSize = useBreakpointValue({
+    base: "2.5rem",
+    md: "2rem",
+    lg: "3rem",
+  });
+  const descriptionFontSize = useBreakpointValue({
+    base: "1rem",
+    md: "1.25rem",
+    lg: "1.5rem",
+  });
+
   return (
-    <>
+    <Flex
+      w="100%"
+      h="100vh"
+      align="center"
+      justify="space-between"
+      pl="7.5%"
+      pr="0"
+      position="relative"
+      overflow="hidden"
+    >
       <Flex
-        w={"85%"}
-        h={"88vh"}
-        align="center"
-        justify="space-between"
-        textColor={"gray.100"}
-        fontSize={"3.65rem"}
-        px={8}
+        w="35%"
+        h="100%"
+        align="flex-start"
+        justify="center"
+        flexDir="column"
+        textAlign="left"
+        fontSize="3.65rem"
+        zIndex={1}
       >
-        <Flex flexDir="column" justify="center" gap={4}>
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Text display="flex" alignItems="center" color={"#13B0F5"}>
-              Olá
-              <motion.span
-                animate={{
-                  rotate: [0, 14, -8, 14, 0],
-                  scale: [1, 1.2, 1.2, 1.1, 1],
-                }}
-                transition={{
-                  duration: 1.2,
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                }}
-                style={{ display: "inline-block", marginLeft: "12px" }}
-              >
-                👋
-              </motion.span>
-              ,
-            </Text>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Text color={"#13B0F5"}>Meu nome é</Text>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <Text
-              fontWeight="bold"
-              bgGradient="linear(to-tl, #CA24B4, #13B0F5, #CA24B4)"
-              bgSize="200% 200%"
-              animation={`${gradientFlow} 6s ease infinite`}
-              bgClip="text"
-            >
-              Gabriela da Rosa
-            </Text>
-          </motion.div>
-        </Flex>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          whileHover={{ scale: 1.03 }}
+        <Text
+          color="#885784"
+          fontSize="1.25rem"
+          fontWeight="bold"
+          fontFamily="Nunito"
         >
-          <Avatar
-            w={"22rem"}
-            h={"22rem"}
-            src={MyPicture}
-            border="6px solid"
-            borderColor="transparent"
-            css={{
-              background: "linear-gradient(45deg, #CA24B4, #13B0F5)",
-              backgroundOrigin: "border-box",
-              boxShadow: "0 0 15px rgba(19, 176, 245, 0.5)",
-            }}
-          />
-        </motion.div>
+          UI/UX Designer
+        </Text>
+        <Text
+          pt="0.75rem"
+          color="black"
+          fontFamily="Playfair Display"
+          fontWeight="bold"
+          fontSize={titleFontSize}
+        >
+          Olá, meu nome é Andrieli Brentano
+        </Text>
+        <Text
+          color="#828282"
+          fontFamily="Nunito"
+          fontSize={descriptionFontSize}
+          pt="2rem"
+        >
+          Sou apaixonada por criatividade, amo me comunicar e estou sempre com
+          um livro por perto. Gosto de projetos que despertam conexão e me
+          desafiem a pensar diferente.
+        </Text>
       </Flex>
-    </>
+
+      <Flex
+        w="65%"
+        minH="100vh"
+        align="flex-start"
+        justify="flex-end"
+        overflow="hidden"
+      >
+        <Image src={myPicture} w="100%" minH="75vh" />
+      </Flex>
+    </Flex>
   );
 }

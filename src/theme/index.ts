@@ -1,12 +1,10 @@
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 
-// Configuração do tema para suportar modo escuro e claro
 const config: ThemeConfig = {
   initialColorMode: "light", // O tema começa como claro
   useSystemColorMode: false, // O usuário pode alterar manualmente
 };
 
-// Definição do tema
 const theme = extendTheme({
   config,
   colors: {
