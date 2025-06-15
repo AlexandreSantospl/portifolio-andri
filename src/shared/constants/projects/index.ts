@@ -109,4 +109,6 @@ export const featureSections: FeatureSectionData[] = [
     imageBottomLeftBottom: thirdLifeSync,
     imageBottomRight: fourthLifeSync,
   },
-];
+] as const;
+
+export type FeatureKeys = (typeof featureSections)[number]["slug"];

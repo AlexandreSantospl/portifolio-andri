@@ -4,9 +4,15 @@ import project1 from "../../../assets/imagens/project1.png";
 import project2 from "../../../assets/imagens/project2.png";
 import project3 from "../../../assets/imagens/project3.png";
 import project4 from "../../../assets/imagens/project4.png";
+import { FeatureKeys } from "../../../shared/constants/projects";
 
-export default function Third() {
+interface Props {
+  onSlugChange: (slug: FeatureKeys) => void;
+}
+
+export default function Third({onSlugChange}: Props) {
   const projects: {
+    slug: FeatureKeys;
     img: string;
     title: string;
     description: string;
@@ -14,6 +20,7 @@ export default function Third() {
     imagePosition: "left" | "right";
   }[] = [
     {
+      slug: "isotron",
       title: "Isotron",
       img: project1,
       description:
@@ -22,6 +29,7 @@ export default function Third() {
       imagePosition: "right",
     },
     {
+      slug: "lifemed",
       title: "LifeMed",
       img: project2,
       description:
@@ -30,6 +38,7 @@ export default function Third() {
       imagePosition: "left",
     },
     {
+      slug: "luna",
       title: "Luna",
       img: project3,
       description:
@@ -38,6 +47,7 @@ export default function Third() {
       imagePosition: "right",
     },
     {
+      slug: "lifesync",
       title: "LifeSync",
       img: project4,
       description:
@@ -88,7 +98,8 @@ export default function Third() {
             title={project.title}
             description={project.description}
             imagePosition={project.imagePosition}
-            link={project.link}
+            link={project.slug}
+            onSlugChange={onSlugChange}
           />
         ))}
       </Flex>

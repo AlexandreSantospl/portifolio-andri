@@ -1,14 +1,13 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { useNavigate, useLocation } from "react-router-dom";
 
-export default function FirstHeader() {
+export default function FirstHeader({
+  setSlug,
+}: {
+  setSlug: (slug: string | undefined) => void;
+}) {
   const [, setActiveSection] = useState("Inicio");
-  const navRef = useRef<HTMLDivElement>(null);
-
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const sections = ["Página Inicial", "Sobre", "Projetos", "Contato"];
 
@@ -30,36 +29,14 @@ export default function FirstHeader() {
     };
 
     if (section === "Página Inicial") {
-      if (location.pathname !== "/") {
-        navigate("/", { replace: false });
-        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      setSlug(undefined);
     } else if (section === "Sobre") {
-      if (location.pathname !== "/sobre") {
-        navigate("/sobre");
-      } else {
-        scrollToId("sobre", 100);
-      }
+      scrollToId("sobre", 100);
     } else if (section === "Projetos") {
-      if (location.pathname !== "/") {
-        navigate("/");
-        setTimeout(() => scrollToId("projetos", 100), 100);
-      } else {
-        scrollToId("projetos", 100);
-      }
+      scrollToId("projetos", 100);
     } else if (section === "Contato") {
-      if (location.pathname !== "/") {
-        navigate("/");
-        setTimeout(() => {
-          const footer = document.getElementById("rodape") || document.body;
-          footer.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      } else {
-        const footer = document.getElementById("rodape") || document.body;
-        footer.scrollIntoView({ behavior: "smooth" });
-      }
+      const footer = document.getElementById("rodape") || document.body;
+      footer.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -78,7 +55,12 @@ export default function FirstHeader() {
       fontSize="1.25rem"
       fontFamily="Poppins"
     >
-      <Flex flexDir="column" justify="center" w="30%">
+      <Flex
+        flexDir="column"
+        justify="center"
+        w="30%"
+        onClick={() => scrollToSection("Página Inicial")}
+      >
         <Text
           fontSize={"1.125rem"}
           fontFamily={"Poppins"}
@@ -89,7 +71,7 @@ export default function FirstHeader() {
         </Text>
       </Flex>
 
-      <Flex gap={"2rem"} ref={navRef} display={{ base: "none", md: "flex" }}>
+      <Flex gap={"2rem"} display={{ base: "none", md: "flex" }}>
         {sections.map((section) => (
           <motion.div
             key={section}

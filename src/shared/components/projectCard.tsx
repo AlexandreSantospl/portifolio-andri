@@ -7,7 +7,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { FeatureKeys } from "../constants/projects";
 
 interface ProjectCardProps {
   image: string;
@@ -15,6 +15,7 @@ interface ProjectCardProps {
   description: string;
   link: string;
   imagePosition?: "left" | "right";
+  onSlugChange: (slug: FeatureKeys) => void;
 }
 
 export const ProjectCard = ({
@@ -23,6 +24,7 @@ export const ProjectCard = ({
   description,
   imagePosition = "left",
   link,
+  onSlugChange,
 }: ProjectCardProps) => {
   const isImageLeft = imagePosition === "left";
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -161,8 +163,9 @@ export const ProjectCard = ({
         )}
 
         <Button
-          as={Link}
-          to={`/projetos/${link}`}
+          onClick={() => onSlugChange(link) 
+            
+          }
           borderColor="#885784"
           borderRadius="24px"
           border="1px"

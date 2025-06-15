@@ -9,16 +9,18 @@ type FeatureSectionProps = {
   imageBottomLeftTop: string;
   imageBottomLeftBottom: string;
   imageBottomRight: string;
+  slug: string;
+  slugSelected?: string;
 };
- const skeletonProps = {
-    borderRadius: "24px",
-    startColor: "gray.100",
-    endColor: "gray.200",
-    fadeDuration: 0.4,
-    w: "100%",
-    h: "100%",
-    boxShadow: "md",
-  };
+const skeletonProps = {
+  borderRadius: "24px",
+  startColor: "gray.100",
+  endColor: "gray.200",
+  fadeDuration: 0.4,
+  w: "100%",
+  h: "100%",
+  boxShadow: "md",
+};
 
 export const FeatureSection = ({
   title,
@@ -29,9 +31,13 @@ export const FeatureSection = ({
   imageBottomLeftTop,
   imageBottomLeftBottom,
   imageBottomRight,
+  slugSelected,
+  slug,
 }: FeatureSectionProps) => {
   return (
     <Flex
+      hidden={slug !== slugSelected}
+      key={slugSelected}
       direction="column"
       gap="32px"
       w={"100%"}
@@ -88,7 +94,6 @@ export const FeatureSection = ({
             objectFit="cover"
             borderRadius={"24px"}
             fallback={<Skeleton {...skeletonProps} />}
-
           />
         </Box>
       </Flex>
@@ -100,14 +105,12 @@ export const FeatureSection = ({
             w="100%"
             objectFit="cover"
             fallback={<Skeleton {...skeletonProps} />}
-
           />
           <Image
             src={imageBottomLeftBottom}
             w="100%"
             objectFit="cover"
             fallback={<Skeleton {...skeletonProps} />}
-
           />
         </Flex>
 
@@ -117,7 +120,6 @@ export const FeatureSection = ({
             w="100%"
             h={"90%"}
             fallback={<Skeleton {...skeletonProps} />}
-
           />
         </Flex>
       </Flex>
