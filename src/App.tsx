@@ -6,17 +6,19 @@ import { type FeatureKeys } from "./shared/constants/projects";
 import Second from "./components/session/second";
 import Third from "./components/session/third";
 import { Features } from "./pages/AllFeatures";
+import { About } from "./pages/About";
 
 function App() {
   const [slug, setSlug] = useState<FeatureKeys | undefined>(undefined);
+  const [page, setPage] = useState<'home' | 'about'>('home');
 
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
 
   useEffect(() => {
-    if (slug) scrollToTop();
-  }, [slug]);
+    if (slug || page === 'about') scrollToTop();
+  }, [slug, page]);
 
   return (
     <Flex
@@ -29,14 +31,20 @@ function App() {
       fontFamily={"Poppins"}
       id="inicio"
     >
-      <FirstHeader setSlug={setSlug} />
+      <FirstHeader setSlug={setSlug} setPage={setPage} />
 
-      <Features slug={slug} />
-
-      {!slug && (
+      {page === 'about' ? (
+        <About />
+      ) : (
         <>
-          <Second />
-          <Third onSlugChange={setSlug} />
+          <Features slug={slug} />
+
+          {!slug && (
+            <>
+              <Second />
+              <Third onSlugChange={setSlug} />
+            </>
+          )}
         </>
       )}
 

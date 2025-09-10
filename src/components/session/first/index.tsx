@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 
 export default function FirstHeader({
   setSlug,
+  setPage,
 }: {
   setSlug: (slug: string | undefined) => void;
+  setPage: (page: 'home' | 'about') => void;
 }) {
   const [, setActiveSection] = useState("Inicio");
 
@@ -30,8 +32,9 @@ export default function FirstHeader({
 
     if (section === "Página Inicial") {
       setSlug(undefined);
+      setPage('home');
     } else if (section === "Sobre") {
-      scrollToId("sobre", 100);
+      setPage('about');
     } else if (section === "Projetos") {
       scrollToId("projetos", 100);
     } else if (section === "Contato") {
