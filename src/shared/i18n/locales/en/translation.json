@@ -1,227 +1,53 @@
 {
-  "default": "",
-  "tables": {
-    "user": {
-      "usuarios": "Users",
-      "name": "Name",
-      "email": "E-mail",
-      "phone": "Phone",
-      "role": "Role"
-    },
-    "customer": {
-      "fantasyName": "Fantasy Name",
-      "country": "Country",
-      "codeERP": "ERP Code",
-      "invoicyWindow": "Billing Window",
-      "color": "Color"
-    },
-    "priceCustomer": {
-      "price": "Price",
-      "join": "Sets",
-      "description": "Description",
-      "basePrice": "Base Price",
-      "actualPrice": "Current Price"
-    }
-  },
-  "global": {
-    "typeHere": "Type here",
-    "selectHere": "Select here",
-    "loadFile": "Load File",
-    "loading": "Loading...",
-    "supportedFormats": "Supported formats:",
-    "nothingFound": "Nothing found",
-    "all": "All",
-    "placeholderNumber": "0.00",
-    "api-error": {
-      "default": "Something went wrong",
-      "create": "Error creating"
-    }
-  },
-  "button": {
-    "newRegistration": "New Registration",
-    "search": "Search",
-    "importBase": "Import Base",
-    "importPlan": "Import Spreadsheets",
-    "save": "Save",
-    "cancel": "Cancel",
-    "delete": "Delete",
-    "import": "Import",
-    "restore": "Restore",
-    "edit": "Edit",
-    "fromTo": "From To",
-    "inactive": "Inactive"
-  },
-  "routes": {
-    "user": "User Management",
-    "dashboard": "Dashboard",
-    "enginerStructure": "Structure Engineering",
-    "customer": "Customer Management",
-    "register": "Register",
-    "enginer-structure": "Structure Engineering"
-  },
-  "login": {
-    "confirmEmail": "Confirm e-mail",
-    "typeEmail": "Type your e-mail",
-    "typeEmailAgain": "Type your e-mail again",
-    "send": "Send",
-    "copyright": "© 2025 DIGICON. All rights reserved.",
-    "createPassword": "Create a password",
-    "password": "Password",
-    "typePassword": "Type your password",
-    "confirmPassword": "Confirm password",
-    "typePasswordAgain": "Type your password again",
-    "typeVerificationCode": "Type the verification code",
-    "didNotReceiveCode": "Didn't receive the code?",
-    "sendNewCode": "Resend verification code",
-    "next": "Next",
-    "loginToYourAccount": "Login to your account",
-    "forgotPassword": "Forgot your password?",
-    "rememberMe": "Remember me",
-    "enter": "Enter"
-  },
-  "customer": {
-    "customerManager": "Customer Management",
-    "customers": "Customers",
-    "register": "Register",
-    "uploadFromPc": "Upload from Computer",
-    "uploadFromSistem": "Upload from System",
-    "delete": {
-      "title": "Delete",
-      "message": "Are you sure you want to delete this customer?"
-    },
-    "form": {
-      "fantasyName": "Fantasy Name",
-      "country": "Country",
-      "socialReason": "Company Name",
-      "local": "Site/Location",
-      "localInput": "Location",
-      "siteInput": "Site",
-      "color": "Color",
-      "invoicyWindow": "Billing Window",
-      "showLocal": "Show location",
-      "erpCode": "ERP Code",
-      "placeholder": {
-        "fantasyName": "Fantasy Name",
-        "socialReason": "Company Name",
-        "invoicyWindow": "Billing Window",
-        "showLocal": "Show location",
-        "erpCode": "ERP Code",
-        "invoicyWindowTolltip": "Fill in days"
-      },
-      "invoicyWindowInfo": "If this field is not filled, the Billing Window will be considered as a period of 1 (one) month.",
-      "importSuccess": "File ready for import!",
-      "removeImportSuccess": "File successfully unchecked!",
-      "succesDelete": "Customer successfully deleted!",
-      "successCreate": "Customer successfully registered!",
-      "successUpdate": "Customer successfully updated!",
-      "errorCreate": "Error registering customer.",
-      "errorUpdate": "Error updating customer.",
-      "error": "Customer ID not found!",
-      "errors": {
-        "fantasyName": "Fantasy Name is required",
-        "country": "Country is required",
-        "socialReason": "Company Name is required",
-        "local": "Site/Location is required",
-        "color": "Color is required",
-        "invoicyWindowRequired": "Billing Window is required",
-        "invoicyWindowMin": "Billing Window must be greater than zero",
-        "showLocal": "Show location is required",
-        "erpCodeRequired": "ERP Code is required",
-        "erpCodeMin": "ERP Code must be greater than zero",
-        "invoicyWindowInfo": "If this field is not filled, the Billing Window will be considered as a period of 1 (one) month.",
-        "erpCodeType": "The ERP Code must be a number"
-      }
-    },
-    "priceTable": "Price Table",
-    "history-price": {
-      "title": "Price History",
-      "adjustment": "Adjustment",
-      "description": "Description",
-      "initialValue": "Initial value",
-      "finalValue": "Current Price",
-      "date": "Date"
-    },
-    "adjustmentModal": {
-      "title": "Price Adjustment",
-      "generalAdjustment": "General Adjustment",
-      "selectAll": "Select All",
-      "set": "Set",
-      "description": "Description",
-      "basePrice": "Base Price",
-      "adjustment": "Adjustment",
-      "newPrice": "New Price",
-      "success": "Adjustment applied successfully!",
-      "error": "Error applying adjustment.",
-      "errors": {
-        "generalAdjustmentMin": "General Adjustment must be greater than zero",
-        "fetchErrors": "Error fetching customer data.",
-        "invalidValue": "Invalid value",
-        "warning": "No changes made."
-      }
-    },
-    "singleAdjustment": {
-      "form": {
-        "basePrice": "Base Price",
-        "adjustment": "Adjustment",
-        "description": "Description",
-        "success": "Adjustment applied successfully!",
-        "error": "Error applying adjustment.",
-        "placeholder": {
-          "basePrice": "0.00",
-          "adjustment": "0.00",
-          "description": "Write the description here"
-        },
-        "errors": {
-          "generalAdjustmentMin": "Invalid value",
-          "description": "Description is required"
-        }
-      }
-    }
-  },
-  "enginerStructure": {
-    "engineerStructure": "Structure Engineering",
-    "fromTo": "From / To",
-    "active": "Active",
-    "inactive": "Inactive",
-    "material": "Raw Material",
-    "fromToTable": {
-      "originalPartNumber": "Original Part. Number",
-      "newPartNumber": "New Part. Number",
-      "category": "Category",
-      "date": "Date of change",
-      "changedTo": "Changed By"
-    },
-    "inactiveTable": {
-      "inactivePartNumber": "Inactive Part. Number",
-      "impactedPartNumber": "Impacted Part. Numbers",
-      "category": "Category",
-      "date": "Date of change",
-      "changedTo": "Changed By",
-      "restoreSet": "Are you sure you want to <b>restore</b> this set?",
-      "restoreMP": "Are you sure you want to <b>restore</b> this raw material?",
-      "restoreComponent": "Are you sure you want to <b>restore</b> this component?"
-    },
-    "form": {
-      "set": {
-        "partNumber": "Part. Number",
-        "partName": "Part. Name",
-        "component": "Component",
-        "error": {
-          "partNumberRequired": "Part. Number is required",
-          "partNameRequired": "Part. Name is required",
-          "componentRequired": "Component is required",
-          "partNumberExists": "Part. Number already exists",
-          "partNameExists": "Part. Name already exists",
-          "submitError": "Error submitting the form. Check the required fields."
-        },
-        "successCreate": "Set created successfully!",
-        "successUpdate": "Set updated successfully!"
-      }
-    }
-  },
-  "file": {
-    "successUpload": "File uploaded successfully!",
-    "errorUpload": "Error uploading file.",
-    "noPermission": "Permission denied!"
-  }
+  "homePage": "Home",
+  "about": "About",
+  "projects": "Projects",
+  "contact": "Contact",
+  "authorName": "Andrieli Brentano",
+  "jobTitle": "UI/UX Designer",
+  "greeting": "Hello, my name is Andrieli Brentano",
+  "shortBio": "I am passionate about creativity, I love to communicate and I always have a book nearby. I like projects that spark connection and challenge me to think differently.",
+  "isotronTitle": "Isotron",
+  "isotronDescription": "The project consisted of developing a management and statistics system for a company that sells radioactive products to clinics and hospitals.",
+  "lifemedTitle": "LifeMed",
+  "lifemedDescription": "This project was developed with a focus on creating a digital platform that works as an e-commerce, but with a B2B model aimed exclusively at the health sector.",
+  "lunaTitle": "Luna",
+  "lunaDescription": "This project was developed with the objective of promoting a better understanding and quality of sleep through continuous monitoring of the user's nightly habits.",
+  "lifesyncTitle": "LifeSync",
+  "lifesyncDescription": "The interface of this project was carefully designed to ensure fluid and accessible navigation, focusing on organization and usability.",
+  "seeLess": "See less",
+  "seeMore": "See more",
+  "seeProject": "See Project",
+  "aboutMe": "Hi! I have a degree in Communication Design from PUCRS and have <b>1 year of experience in UX/UI Design</b>. I am passionate about everything that involves creating with purpose. In my free time, you will probably find me with a book in my hand or binge-watching a series or movie (I'm driven by good narratives in any format!).",
+  "softwares": "Softwares",
+  "figma": "Figma",
+  "levelAdvanced": "Level: Advanced",
+  "adobeIllustrator": "Adobe Illustrator",
+  "levelIntermediate": "Level: Intermediate",
+  "adobePhotoshop": "Adobe Photoshop",
+  "adobeInDesign": "Adobe InDesign",
+  "levelBeginner": "Level: Beginner",
+  "blender": "Blender",
+  "academicExperience": "Academic Experiences",
+  "graphicDesignCourse": "Graphic Design Course",
+  "graphicDesignCourseDescription": "8-month course on Adobe Photoshop, Adobe InDesign and Adobe Illustrator. Institution: MK+ Academy",
+  "studyGroup": "Study Group - FAMECOS",
+  "studyGroupDescription": "I taught a study group with Preto no Branco where we taught Design students about Hard skills and Soft skills in both Design and the job market. Duration: 4 months",
+  "graduation": "Graduation - Graphic Design",
+  "graduationDate": "Conclusion: 2025/1",
+  "professionalExperience": "Professional Experiences",
+  "pretoNoBranco": "Preto no Branco",
+  "pretoNoBrancoDate": "May 24 - June 25",
+  "fokvs": "Fokvs",
+  "fokvsDate": "July 25 - Present",
+  "languages": "Languages",
+  "english": "English",
+  "intermediate": "Intermediate",
+  "spanish": "Spanish",
+  "basic": "Basic",
+  "accessBehance": "Access Behance",
+  "isotronDetailedDescription": "<p>The project, whose name was changed for contractual confidentiality reasons, consisted of developing a complete management and statistics system for a company specializing in the sale of radioactive products for <strong>clinics and hospitals</strong>.</p><br/><p><strong>13 distinct workflows</strong> were created, ranging from detailed customer registration control, order issuance and traceability of radioactive materials. These flows were carefully structured to ensure safety, efficiency and compliance in all stages of the operational process.</p><br/><p>This project resulted in greater <strong>security, agility and operational control</strong> for the company, directly contributing to its organization and growth in the sector.</p>",
+  "lifemedDetailedDescription": "<p>The project, whose name was changed for contractual confidentiality reasons, aimed to develop a digital platform in the <strong>B2B e-commerce</strong> model, aimed at connecting suppliers of hospital products to clinics, offices and hospitals.</p><br /><p>Several navigation flows were modeled, ranging from the registration and management of products by suppliers, to the search, comparison and request of orders by buyers. The platform's architecture was designed to optimize the experience of both user profiles, ensuring <strong>agility, usability and trust</strong> in all interactions.</p>",
+  "lunaDetailedDescription": "<p>This project was developed with the objective of promoting a better understanding and <strong>quality of sleep</strong> through continuous <strong>monitoring</strong> of the user's nightly habits.</p><br /><p>In addition to <strong>monitoring</strong>, complementary features were incorporated, such as suggestions for <strong>light stretching</strong> before bed and a <strong>library of relaxing sounds</strong>, such as white noise, nature sounds and soft music, which help in the relaxation process and facilitate sleep induction.</p>",
+  "lifesyncDetailedDescription": "<p>The interface of this project was carefully designed to ensure fluid and accessible navigation, with a focus on organization and usability. The user can register their <strong>documents</strong>, set custom alarms and receive automatic <strong>notifications</strong> before the expiration date, avoiding forgetfulness and inconvenience.</p><br /><p>A highlight of the project was the attention to the <strong>security and privacy</strong> of personal data. The protection strategies were rigorously elaborated, ensuring that user information is protected against unauthorized access and avoiding any risk of data leakage.</p>"
 }

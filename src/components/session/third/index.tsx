@@ -5,12 +5,13 @@ import project2 from "../../../assets/imagens/project2.png";
 import project3 from "../../../assets/imagens/project3.png";
 import project4 from "../../../assets/imagens/project4.png";
 import { FeatureKeys } from "../../../shared/constants/projects";
+import { getTranslatedMessage } from "../../../shared/i18n/i18n";
 
 interface Props {
   onSlugChange: (slug: FeatureKeys) => void;
 }
 
-export default function Third({onSlugChange}: Props) {
+export default function Third({ onSlugChange }: Props) {
   const projects: {
     slug: FeatureKeys;
     img: string;
@@ -19,43 +20,39 @@ export default function Third({onSlugChange}: Props) {
     link: string;
     imagePosition: "left" | "right";
   }[] = [
-    {
-      slug: "isotron",
-      title: "Isotron",
-      img: project1,
-      description:
-        "O projeto consistiu no desenvolvimento de um sistema de gestão e estatísticas para uma empresa que comercializa produtos radioativos para clínicas e hospitais. ",
-      link: "isotron",
-      imagePosition: "right",
-    },
-    {
-      slug: "lifemed",
-      title: "LifeMed",
-      img: project2,
-      description:
-        "Este projeto foi desenvolvido com foco em criar uma plataforma digital que funciona como um e-commerce, mas com um modelo B2B voltado exclusivamente para o setor de saúde.",
-      link: "lifemed",
-      imagePosition: "left",
-    },
-    {
-      slug: "luna",
-      title: "Luna",
-      img: project3,
-      description:
-        "Este projeto foi desenvolvido com o objetivo de promover uma melhor compreensão e qualidade do sono por meio do monitoramento contínuo dos hábitos noturnos do usuário.",
-      link: "luna",
-      imagePosition: "right",
-    },
-    {
-      slug: "lifesync",
-      title: "LifeSync",
-      img: project4,
-      description:
-        "A interface deste projeto foi cuidadosamente pensada para garantir uma navegação fluida e acessível, com foco na organização e na usabilidade.",
-      link: "lifesync",
-      imagePosition: "left",
-    },
-  ];
+      {
+        slug: "isotron",
+        title: getTranslatedMessage("isotronTitle"),
+        img: project1,
+        description: getTranslatedMessage("isotronDescription"),
+        link: "isotron",
+        imagePosition: "right",
+      },
+      {
+        slug: "lifemed",
+        title: getTranslatedMessage("lifemedTitle"),
+        img: project2,
+        description: getTranslatedMessage("lifemedDescription"),
+        link: "lifemed",
+        imagePosition: "left",
+      },
+      {
+        slug: "luna",
+        title: getTranslatedMessage("lunaTitle"),
+        img: project3,
+        description: getTranslatedMessage("lunaDescription"),
+        link: "luna",
+        imagePosition: "right",
+      },
+      {
+        slug: "lifesync",
+        title: getTranslatedMessage("lifesyncTitle"),
+        img: project4,
+        description: getTranslatedMessage("lifesyncDescription"),
+        link: "lifesync",
+        imagePosition: "left",
+      },
+    ];
 
   return (
     <Flex
@@ -77,7 +74,7 @@ export default function Third({onSlugChange}: Props) {
           fontWeight={"bold"}
           color={"black"}
         >
-          Projetos
+          {getTranslatedMessage("projects")}
         </Text>
 
         <Box

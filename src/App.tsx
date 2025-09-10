@@ -7,6 +7,8 @@ import Second from "./components/session/second";
 import Third from "./components/session/third";
 import { Features } from "./pages/AllFeatures";
 import { About } from "./pages/About";
+import { useTranslation } from "react-i18next";
+import { TranslationKeys } from "./shared/i18n/interface";
 
 function App() {
   const [slug, setSlug] = useState<FeatureKeys | undefined>(undefined);
@@ -20,6 +22,14 @@ function App() {
     if (slug || page === 'about') scrollToTop();
   }, [slug, page]);
 
+  const { i18n } = useTranslation<"common", TranslationKeys>("common");
+
+  const actualLanguage = ["pt", "en", "es"].includes(i18n.language)
+    ? (i18n.language as "pt" | "en" | "es")
+    : "pt";
+
+  //TODO ARRUMAR
+  console.log(actualLanguage)
   return (
     <Flex
       justify={"center"}

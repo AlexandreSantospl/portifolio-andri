@@ -7,6 +7,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { getTranslatedMessage } from "../../shared/i18n/i18n";
 import { FeatureKeys } from "../constants/projects";
 
 interface ProjectCardProps {
@@ -108,7 +109,7 @@ export const ProjectCard = ({
           fontWeight="bold"
           fontFamily="Nunito"
         >
-          UI/UX Designer
+          {getTranslatedMessage("jobTitle")}
         </Text>
         <Text
           pt="0.75rem"
@@ -138,11 +139,11 @@ export const ProjectCard = ({
           sx={
             shouldShowToggle && !showFullDescription
               ? {
-                  display: "-webkit-box",
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: "vertical",
-                  textOverflow: "ellipsis",
-                }
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                textOverflow: "ellipsis",
+              }
               : {}
           }
         >
@@ -158,14 +159,14 @@ export const ProjectCard = ({
             fontSize="0.95rem"
             fontWeight="bold"
           >
-            {showFullDescription ? "Ver menos" : "Ver mais"}
+            {showFullDescription
+              ? getTranslatedMessage("seeLess")
+              : getTranslatedMessage("seeMore")}
           </Button>
         )}
 
         <Button
-          onClick={() => onSlugChange(link) 
-            
-          }
+          onClick={() => onSlugChange(link as FeatureKeys)}
           borderColor="#885784"
           borderRadius="24px"
           border="1px"
@@ -177,7 +178,7 @@ export const ProjectCard = ({
           mt="2.5rem"
           _hover={{ bg: "#885784", color: "white" }}
         >
-          <Text px="0.5rem">Ver Projeto</Text>
+          <Text px="0.5rem">{getTranslatedMessage("seeProject")}</Text>
         </Button>
       </Flex>
     </Flex>

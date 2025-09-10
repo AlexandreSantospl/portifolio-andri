@@ -1,20 +1,28 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { getTranslatedMessage } from "../../../shared/i18n/i18n";
+import { useTranslation } from "react-i18next";
+import { TranslationKeys } from "../../../shared/i18n/interface";
 
 export default function FirstHeader({
   setSlug,
   setPage,
 }: {
   setSlug: (slug: string | undefined) => void;
-  setPage: (page: 'home' | 'about') => void;
+  setPage: (page: "home" | "about") => void;
 }) {
-  const [, setActiveSection] = useState("Inicio");
+  const [, setActiveSection] = useState("homePage");
 
-  const sections = ["Página Inicial", "Sobre", "Projetos", "Contato"];
+  const sections = [
+    { key: "homePage", label: getTranslatedMessage("homePage") },
+    { key: "about", label: getTranslatedMessage("about") },
+    { key: "projects", label: getTranslatedMessage("projects") },
+    { key: "contact", label: getTranslatedMessage("contact") },
+  ];
 
-  const scrollToSection = (section: string) => {
-    setActiveSection(section);
+  const scrollToSection = (sectionKey: string) => {
+    setActiveSection(sectionKey);
 
     const scrollToId = (id: string, offset = 100) => {
       const element = document.getElementById(id);
@@ -30,18 +38,24 @@ export default function FirstHeader({
       }
     };
 
-    if (section === "Página Inicial") {
+    if (sectionKey === "homePage") {
       setSlug(undefined);
-      setPage('home');
-    } else if (section === "Sobre") {
-      setPage('about');
-    } else if (section === "Projetos") {
+      setPage("home");
+    } else if (sectionKey === "about") {
+      setPage("about");
+    } else if (sectionKey === "projects") {
       scrollToId("projetos", 100);
-    } else if (section === "Contato") {
+    } else if (sectionKey === "contact") {
       const footer = document.getElementById("rodape") || document.body;
       footer.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const { i18n } = useTranslation<"common", TranslationKeys>("common");
+
+  const currentLang = ["pt", "en", "es"].includes(i18n.language)
+    ? (i18n.language as "pt" | "en" | "es")
+    : "pt";
 
   return (
     <Flex
@@ -62,7 +76,7 @@ export default function FirstHeader({
         flexDir="column"
         justify="center"
         w="30%"
-        onClick={() => scrollToSection("Página Inicial")}
+        onClick={() => scrollToSection("homePage")}
       >
         <Text
           fontSize={"1.125rem"}
@@ -70,19 +84,19 @@ export default function FirstHeader({
           lineHeight={"180%"}
           color={"black"}
         >
-          Andrieli Brentano
+          {getTranslatedMessage("authorName")}
         </Text>
       </Flex>
 
-      <Flex gap={"2rem"} display={{ base: "none", md: "flex" }}>
+      <Flex gap={"2rem"} display={{ base: "none", md: "flex" }} alignItems={"center"}>
         {sections.map((section) => (
           <motion.div
-            key={section}
+            key={section.key}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Text
-              onClick={() => scrollToSection(section)}
+              onClick={() => scrollToSection(section.key)}
               cursor="pointer"
               fontWeight={"light"}
               fontSize={"1.125rem"}
@@ -91,10 +105,13 @@ export default function FirstHeader({
               color={"black"}
               position="relative"
             >
-              {section}
+              {section.label}
             </Text>
           </motion.div>
         ))}
+        <Button onClick={() => i18n.changeLanguage(currentLang === "pt" ? "en" : "pt")}>
+          {currentLang === "pt" ? "EN" : "PT"}
+        </Button>
       </Flex>
     </Flex>
   );

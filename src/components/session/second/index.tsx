@@ -1,4 +1,5 @@
 import { Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
+import { getTranslatedMessage } from "../../../shared/i18n/i18n";
 import myPicture from "../../../assets/imagens/myPicture.png";
 
 export default function Second() {
@@ -40,7 +41,7 @@ export default function Second() {
           fontWeight="bold"
           fontFamily="Nunito"
         >
-          UI/UX Designer
+          {getTranslatedMessage("jobTitle")}
         </Text>
         <Text
           pt="0.75rem"
@@ -49,7 +50,7 @@ export default function Second() {
           fontWeight="bold"
           fontSize={titleFontSize}
         >
-          Olá, meu nome é Andrieli Brentano
+          {getTranslatedMessage("greeting")}
         </Text>
         <Text
           color="#828282"
@@ -57,9 +58,7 @@ export default function Second() {
           fontSize={descriptionFontSize}
           pt="2rem"
         >
-          Sou apaixonada por criatividade, amo me comunicar e estou sempre com
-          um livro por perto. Gosto de projetos que despertam conexão e me
-          desafiem a pensar diferente.
+          {getTranslatedMessage("shortBio")}
         </Text>
       </Flex>
 
