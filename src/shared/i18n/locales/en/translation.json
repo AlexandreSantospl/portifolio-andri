@@ -1,0 +1,227 @@
+{
+  "default": "",
+  "tables": {
+    "user": {
+      "usuarios": "Users",
+      "name": "Name",
+      "email": "E-mail",
+      "phone": "Phone",
+      "role": "Role"
+    },
+    "customer": {
+      "fantasyName": "Fantasy Name",
+      "country": "Country",
+      "codeERP": "ERP Code",
+      "invoicyWindow": "Billing Window",
+      "color": "Color"
+    },
+    "priceCustomer": {
+      "price": "Price",
+      "join": "Sets",
+      "description": "Description",
+      "basePrice": "Base Price",
+      "actualPrice": "Current Price"
+    }
+  },
+  "global": {
+    "typeHere": "Type here",
+    "selectHere": "Select here",
+    "loadFile": "Load File",
+    "loading": "Loading...",
+    "supportedFormats": "Supported formats:",
+    "nothingFound": "Nothing found",
+    "all": "All",
+    "placeholderNumber": "0.00",
+    "api-error": {
+      "default": "Something went wrong",
+      "create": "Error creating"
+    }
+  },
+  "button": {
+    "newRegistration": "New Registration",
+    "search": "Search",
+    "importBase": "Import Base",
+    "importPlan": "Import Spreadsheets",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "import": "Import",
+    "restore": "Restore",
+    "edit": "Edit",
+    "fromTo": "From To",
+    "inactive": "Inactive"
+  },
+  "routes": {
+    "user": "User Management",
+    "dashboard": "Dashboard",
+    "enginerStructure": "Structure Engineering",
+    "customer": "Customer Management",
+    "register": "Register",
+    "enginer-structure": "Structure Engineering"
+  },
+  "login": {
+    "confirmEmail": "Confirm e-mail",
+    "typeEmail": "Type your e-mail",
+    "typeEmailAgain": "Type your e-mail again",
+    "send": "Send",
+    "copyright": "© 2025 DIGICON. All rights reserved.",
+    "createPassword": "Create a password",
+    "password": "Password",
+    "typePassword": "Type your password",
+    "confirmPassword": "Confirm password",
+    "typePasswordAgain": "Type your password again",
+    "typeVerificationCode": "Type the verification code",
+    "didNotReceiveCode": "Didn't receive the code?",
+    "sendNewCode": "Resend verification code",
+    "next": "Next",
+    "loginToYourAccount": "Login to your account",
+    "forgotPassword": "Forgot your password?",
+    "rememberMe": "Remember me",
+    "enter": "Enter"
+  },
+  "customer": {
+    "customerManager": "Customer Management",
+    "customers": "Customers",
+    "register": "Register",
+    "uploadFromPc": "Upload from Computer",
+    "uploadFromSistem": "Upload from System",
+    "delete": {
+      "title": "Delete",
+      "message": "Are you sure you want to delete this customer?"
+    },
+    "form": {
+      "fantasyName": "Fantasy Name",
+      "country": "Country",
+      "socialReason": "Company Name",
+      "local": "Site/Location",
+      "localInput": "Location",
+      "siteInput": "Site",
+      "color": "Color",
+      "invoicyWindow": "Billing Window",
+      "showLocal": "Show location",
+      "erpCode": "ERP Code",
+      "placeholder": {
+        "fantasyName": "Fantasy Name",
+        "socialReason": "Company Name",
+        "invoicyWindow": "Billing Window",
+        "showLocal": "Show location",
+        "erpCode": "ERP Code",
+        "invoicyWindowTolltip": "Fill in days"
+      },
+      "invoicyWindowInfo": "If this field is not filled, the Billing Window will be considered as a period of 1 (one) month.",
+      "importSuccess": "File ready for import!",
+      "removeImportSuccess": "File successfully unchecked!",
+      "succesDelete": "Customer successfully deleted!",
+      "successCreate": "Customer successfully registered!",
+      "successUpdate": "Customer successfully updated!",
+      "errorCreate": "Error registering customer.",
+      "errorUpdate": "Error updating customer.",
+      "error": "Customer ID not found!",
+      "errors": {
+        "fantasyName": "Fantasy Name is required",
+        "country": "Country is required",
+        "socialReason": "Company Name is required",
+        "local": "Site/Location is required",
+        "color": "Color is required",
+        "invoicyWindowRequired": "Billing Window is required",
+        "invoicyWindowMin": "Billing Window must be greater than zero",
+        "showLocal": "Show location is required",
+        "erpCodeRequired": "ERP Code is required",
+        "erpCodeMin": "ERP Code must be greater than zero",
+        "invoicyWindowInfo": "If this field is not filled, the Billing Window will be considered as a period of 1 (one) month.",
+        "erpCodeType": "The ERP Code must be a number"
+      }
+    },
+    "priceTable": "Price Table",
+    "history-price": {
+      "title": "Price History",
+      "adjustment": "Adjustment",
+      "description": "Description",
+      "initialValue": "Initial value",
+      "finalValue": "Current Price",
+      "date": "Date"
+    },
+    "adjustmentModal": {
+      "title": "Price Adjustment",
+      "generalAdjustment": "General Adjustment",
+      "selectAll": "Select All",
+      "set": "Set",
+      "description": "Description",
+      "basePrice": "Base Price",
+      "adjustment": "Adjustment",
+      "newPrice": "New Price",
+      "success": "Adjustment applied successfully!",
+      "error": "Error applying adjustment.",
+      "errors": {
+        "generalAdjustmentMin": "General Adjustment must be greater than zero",
+        "fetchErrors": "Error fetching customer data.",
+        "invalidValue": "Invalid value",
+        "warning": "No changes made."
+      }
+    },
+    "singleAdjustment": {
+      "form": {
+        "basePrice": "Base Price",
+        "adjustment": "Adjustment",
+        "description": "Description",
+        "success": "Adjustment applied successfully!",
+        "error": "Error applying adjustment.",
+        "placeholder": {
+          "basePrice": "0.00",
+          "adjustment": "0.00",
+          "description": "Write the description here"
+        },
+        "errors": {
+          "generalAdjustmentMin": "Invalid value",
+          "description": "Description is required"
+        }
+      }
+    }
+  },
+  "enginerStructure": {
+    "engineerStructure": "Structure Engineering",
+    "fromTo": "From / To",
+    "active": "Active",
+    "inactive": "Inactive",
+    "material": "Raw Material",
+    "fromToTable": {
+      "originalPartNumber": "Original Part. Number",
+      "newPartNumber": "New Part. Number",
+      "category": "Category",
+      "date": "Date of change",
+      "changedTo": "Changed By"
+    },
+    "inactiveTable": {
+      "inactivePartNumber": "Inactive Part. Number",
+      "impactedPartNumber": "Impacted Part. Numbers",
+      "category": "Category",
+      "date": "Date of change",
+      "changedTo": "Changed By",
+      "restoreSet": "Are you sure you want to <b>restore</b> this set?",
+      "restoreMP": "Are you sure you want to <b>restore</b> this raw material?",
+      "restoreComponent": "Are you sure you want to <b>restore</b> this component?"
+    },
+    "form": {
+      "set": {
+        "partNumber": "Part. Number",
+        "partName": "Part. Name",
+        "component": "Component",
+        "error": {
+          "partNumberRequired": "Part. Number is required",
+          "partNameRequired": "Part. Name is required",
+          "componentRequired": "Component is required",
+          "partNumberExists": "Part. Number already exists",
+          "partNameExists": "Part. Name already exists",
+          "submitError": "Error submitting the form. Check the required fields."
+        },
+        "successCreate": "Set created successfully!",
+        "successUpdate": "Set updated successfully!"
+      }
+    }
+  },
+  "file": {
+    "successUpload": "File uploaded successfully!",
+    "errorUpload": "Error uploading file.",
+    "noPermission": "Permission denied!"
+  }
+}

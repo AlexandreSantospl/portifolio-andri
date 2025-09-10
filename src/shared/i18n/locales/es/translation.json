@@ -1,0 +1,251 @@
+{
+  "default": "",
+  "tables": {
+    "user": {
+      "usuarios": "Usuarios",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "role": "Cargo"
+    },
+    "customer": {
+      "fantasyName": "Nombre de fantasía",
+      "country": "País",
+      "codeERP": "Código ERP",
+      "invoicyWindow": "Ventana de facturación",
+      "color": "Color"
+    },
+    "priceCustomer": {
+      "price": "Precio",
+      "join": "Conjuntos",
+      "description": "Descripción",
+      "basePrice": "Precio base",
+      "actualPrice": "Precio actual"
+    }
+  },
+  "global": {
+    "typeHere": "Escriba aquí",
+    "selectHere": "Seleccione aquí",
+    "loadFile": "Cargar archivo",
+    "loading": "Cargando...",
+    "supportedFormats": "Formatos admitidos:",
+    "nothingFound": "No se encontraron resultados",
+    "all": "Todos",
+    "placeholderNumber": "0,00",
+    "api-error": {
+      "default": "Algo salió mal",
+      "create": "Error al crear"
+    }
+  },
+  "button": {
+    "newRegistration": "Nuevo registro",
+    "search": "Buscar",
+    "importBase": "Importar base",
+    "importPlan": "Importar hojas de cálculo",
+    "planLoaded": "Hoja de cálculo cargada",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "import": "Importar",
+    "restore": "Restaurar",
+    "edit": "Editar",
+    "fromTo": "De Para",
+    "inactive": "Inactivar"
+  },
+  "routes": {
+    "user": "Gestión de Usuarios",
+    "dashboard": "Dashboard",
+    "enginerStructure": "Ingeniería de Estructura",
+    "customer": "Gestión de Clientes",
+    "register": "Registro",
+    "enginer-structure": "Ingeniería de Estructura"
+  },
+  "login": {
+    "confirmEmail": "Confirmar correo electrónico",
+    "typeEmail": "Escriba el correo electrónico",
+    "typeEmailAgain": "Vuelva a escribir el correo electrónico",
+    "send": "Enviar",
+    "copyright": "© 2025 DIGICON. Todos los derechos reservados.",
+    "createPassword": "Cree una contraseña",
+    "password": "Contraseña",
+    "typePassword": "Escriba la contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "typePasswordAgain": "Vuelva a escribir la contraseña",
+    "typeVerificationCode": "Escriba el código de verificación",
+    "didNotReceiveCode": "¿No recibió el código?",
+    "sendNewCode": "Reenviar código de verificación",
+    "next": "Siguiente",
+    "loginToYourAccount": "Inicie sesión en su cuenta",
+    "forgotPassword": "¿Olvidó su contraseña?",
+    "rememberMe": "Recordarme",
+    "enter": "Entrar"
+  },
+  "customer": {
+    "customerManager": "Gestión de clientes",
+    "customers": "Clientes",
+    "register": "Registro",
+    "uploadFromPc": "Cargar desde la computadora",
+    "uploadFromSistem": "Cargar desde el sistema",
+    "delete": {
+      "title": "Eliminar",
+      "message": "¿Está seguro de que desea eliminar este cliente?"
+    },
+    "form": {
+      "fantasyName": "Nombre de fantasía",
+      "country": "País",
+      "socialReason": "Razón social",
+      "local": "Sitio/Local",
+      "localInput": "Local",
+      "siteInput": "Sitio",
+      "color": "Color",
+      "invoicyWindow": "Ventana de facturación",
+      "showLocal": "Ver localidad",
+      "erpCode": "Código ERP",
+      "placeholder": {
+        "fantasyName": "Nombre de fantasía",
+        "socialReason": "Razón social",
+        "invoicyWindow": "Ventana de facturación",
+        "showLocal": "Ver localidad",
+        "erpCode": "Código ERP",
+        "invoicyWindowTolltip": "Llenar en días"
+      },
+      "invoicyWindowInfo": "Si no se completa este campo, la ventana de facturación se considerará como el período de 1 (un) mes.",
+      "importSuccess": "¡Archivo listo para importar!",
+      "removeImportSuccess": "¡Archivo desmarcado con éxito!",
+      "succesDelete": "¡Cliente eliminado con éxito!",
+      "successCreate": "¡Cliente registrado con éxito!",
+      "successUpdate": "¡Cliente actualizado con éxito!",
+      "errorCreate": "Error al registrar el cliente.",
+      "errorUpdate": "Error al actualizar el cliente.",
+      "error": "¡ID de cliente no encontrado!",
+      "errors": {
+        "fantasyName": "El nombre de fantasía es obligatorio",
+        "country": "El país es obligatorio",
+        "socialReason": "La razón social es obligatoria",
+        "local": "El sitio/local es obligatorio",
+        "color": "El color es obligatorio",
+        "invoicyWindowRequired": "La ventana de facturación es obligatoria",
+        "invoicyWindowMin": "La ventana de facturación debe ser mayor que cero",
+        "showLocal": "Ver la localidad es obligatorio",
+        "erpCodeRequired": "El código ERP es obligatorio",
+        "erpCodeMin": "El código ERP debe ser mayor que cero",
+        "invoicyWindowInfo": "Si no se completa este campo, la ventana de facturación se considerará como el período de 1 (un) mes.",
+        "erpCodeType": "El código ERP debe ser un número"
+      }
+    },
+    "priceTable": "Tabla de precios",
+    "history-price": {
+      "title": "Historial de precios",
+      "adjustment": "Reajuste",
+      "description": "Descripción",
+      "initialValue": "Valor inicial",
+      "finalValue": "Precio actual",
+      "date": "Fecha"
+    },
+    "adjustmentModal": {
+      "title": "Reajuste de precios",
+      "generalAdjustment": "Reajuste general",
+      "selectAll": "Seleccionar todo",
+      "deselectAll": "Deseleccionar todo",
+      "selectOf": "Seleccionados de",
+      "set": "Conjunto",
+      "description": "Descripción",
+      "basePrice": "Precio base",
+      "adjustment": "Reajuste",
+      "newPrice": "Nuevo precio",
+      "success": "¡Reajuste aplicado con éxito!",
+      "error": "Error al aplicar el reajuste.",
+      "errors": {
+        "generalAdjustmentMin": "El reajuste general debe ser mayor que cero",
+        "fetchErrors": "Error al buscar los datos del cliente.",
+        "invalidValue": "Valor no válido",
+        "warning": "No se han realizado cambios."
+      }
+    },
+    "singleAdjustment": {
+      "form": {
+        "basePrice": "Precio base",
+        "adjustment": "Reajuste",
+        "description": "Descripción",
+        "success": "¡Reajuste aplicado con éxito!",
+        "error": "Error al aplicar el reajuste.",
+        "placeholder": {
+          "basePrice": "0,00",
+          "adjustment": "0,00",
+          "description": "Escriba la descripción aquí"
+        },
+        "errors": {
+          "generalAdjustmentMin": "Valor no válido",
+          "description": "La descripción es obligatoria"
+        }
+      }
+    }
+  },
+  "enginerStructure": {
+    "newStructure": "Nueva estructura",
+    "engineerStructure": "Ingeniería de estructura",
+    "fromTo": "De / Para",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "material": "Materia prima",
+    "component": "Componente",
+    "joint": "Conjunto",
+    "dedicated": "Dedicado",
+    "shared": "Compartido",
+    "createCard": "Cree un nuevo número de pieza.",
+    "partNumber": "Número de pieza",
+    "partName": "Nombre de la pieza",
+    "quantity": "Cantidad (M.P/Pieza)",
+    "fromToTable": {
+      "originalPartNumber": "Número de pieza original",
+      "newPartNumber": "Número de pieza nuevo",
+      "category": "Categoría",
+      "date": "Fecha de modificación",
+      "changedTo": "Modificado por"
+    },
+    "inactiveTable": {
+      "inactivePartNumber": "Número de pieza inactivado",
+      "impactedPartNumber": "Números de pieza afectados",
+      "category": "Categoría",
+      "date": "Fecha de modificación",
+      "changedTo": "Modificado por",
+      "restoreSet": "¿Está seguro de que desea <b>restaurar</b> este conjunto?",
+      "restoreMP": "¿Está seguro de que desea <b>restaurar</b> esta materia prima?",
+      "restoreComponent": "¿Está seguro de que desea <b>restaurar</b> este componente?"
+    },
+    "form": {
+      "select": {},
+      "structure-form": {
+        "errors": {
+          "partNumberRequired": "El número de pieza es obligatorio",
+          "partNameRequired": "El nombre de la pieza es obligatorio",
+          "partNumberExists": "El número de pieza ya existe",
+          "partNameExists": "El nombre de la pieza ya existe",
+          "component": "El componente es obligatorio",
+          "quantity": "La cantidad es obligatoria",
+          "rawMaterial": "La materia prima es obligatoria"
+        }
+      },
+      "set": {
+        "partNumber": "Número de pieza",
+        "partName": "Nombre de la pieza",
+        "component": "Componente",
+        "error": {
+          "partNumberRequired": "El número de pieza es obligatorio",
+          "partNameRequired": "El nombre de la pieza es obligatorio",
+          "componentRequired": "El componente es obligatorio",
+          "partNumberExists": "El número de pieza ya existe",
+          "partNameExists": "El nombre de la pieza ya existe",
+          "submitError": "Error al enviar el formulario. Verifique los campos obligatorios."
+        },
+        "successCreate": "¡Conjunto creado con éxito!",
+        "successUpdate": "¡Conjunto actualizado con éxito!"
+      }
+    }
+  },
+  "file": {
+    "successUpload": "¡Archivo enviado con éxito!",
+    "errorUpload": "Error al enviar el archivo.",
+    "noPermission": "¡Permiso denegado!"
+  }
+}
