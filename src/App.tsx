@@ -41,7 +41,7 @@ function App() {
       fontFamily={"Poppins"}
       id="inicio"
     >
-      <FirstHeader setSlug={setSlug} setPage={setPage} page={page} />
+      <FirstHeader setSlug={setSlug} setPage={setPage} page={page} slug={slug} />
 
       {page === 'about' ? (
         <About />

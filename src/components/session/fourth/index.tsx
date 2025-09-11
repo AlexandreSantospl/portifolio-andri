@@ -28,27 +28,27 @@ export default function Fourth() {
 
     link: string;
   }[] = [
-    {
-      img: instagram,
-      link: "https://www.instagram.com/andri_brentano?igsh=ZnNmZTA3OXV4YW9i",
-    },
-    {
-      img: linkedin,
-      link: "https://www.linkedin.com/in/andrieli-brentano",
-    },
-    {
-      img: be,
-      link: "https://www.behance.net/andrielbrentan",
-    },
-    {
-      img: email,
-      link: "mailto:andri.brentano@gmail.com",
-    },
-    {
-      img: wpp,
-      link: "https://wa.me/5191459386",
-    },
-  ];
+      {
+        img: instagram,
+        link: "https://www.linkedin.com/in/andrieli-brentano",
+      },
+      {
+        img: linkedin,
+        link: "https://www.instagram.com/andri_brentano?igsh=ZnNmZTA3OXV4YW9i",
+      },
+      {
+        img: be,
+        link: "https://www.behance.net/andrielbrentan",
+      },
+      {
+        img: email,
+        link: "mailto:andri.brentano@gmail.com",
+      },
+      {
+        img: wpp,
+        link: "https://wa.me/5191459386",
+      },
+    ];
 
   return (
     <Flex

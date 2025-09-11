@@ -6,19 +6,15 @@ import or from "../assets/icons/or.svg";
 import ps from "../assets/icons/ps.svg";
 import andri from "../assets/imagens/andri-onda.svg";
 import { getTranslatedMessage } from "../shared/i18n/i18n";
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { TranslationKeys } from "../shared/i18n/interface";
 
-const object = [
-  { id: 1, img: id, title: getTranslatedMessage("figma"), description: getTranslatedMessage("levelAdvanced") },
-  { id: 4, img: ai, title: getTranslatedMessage("adobeIllustrator"), description: getTranslatedMessage("levelIntermediate") },
-  { id: 5, img: ps, title: getTranslatedMessage("adobePhotoshop"), description: getTranslatedMessage("levelIntermediate") },
-];
 
-const secondObject = [
-  { id: 2, img: figma, title: getTranslatedMessage("adobeInDesign"), description: getTranslatedMessage("levelBeginner") },
-  { id: 3, img: or, title: getTranslatedMessage("blender"), description: getTranslatedMessage("levelBeginner") },
-];
 
 export function About() {
+
+  const { i18n } = useTranslation<"common", TranslationKeys>("common");
   const titleFontSize = useBreakpointValue({ base: "2rem", md: "2.5rem", lg: "3rem" });
   const titleStyle = {
     color: "black",
@@ -35,6 +31,20 @@ export function About() {
     fontSize: expTitleFontSize,
   }
   const subHeadingFontSize = useBreakpointValue({ base: "1rem", md: "1.1rem", lg: "1.25rem" });
+
+  const object = () => [
+    { id: 1, img: id, title: getTranslatedMessage("figma"), description: getTranslatedMessage("levelAdvanced") },
+    { id: 4, img: ai, title: getTranslatedMessage("adobeIllustrator"), description: getTranslatedMessage("levelIntermediate") },
+    { id: 5, img: ps, title: getTranslatedMessage("adobePhotoshop"), description: getTranslatedMessage("levelIntermediate") },
+  ];
+
+  const secondObject = () => [
+    { id: 2, img: figma, title: getTranslatedMessage("adobeInDesign"), description: getTranslatedMessage("levelBeginner") },
+    { id: 3, img: or, title: getTranslatedMessage("blender"), description: getTranslatedMessage("levelBeginner") },
+  ];
+
+  const objects = useMemo(() => object(), [i18n.language]);
+  const secondObjects = useMemo(() => secondObject(), [i18n.language]);
 
   return (
     <Flex w="100%" direction="column" p={{ base: 4, md: 8 }}
@@ -87,7 +97,7 @@ export function About() {
 
         <VStack spacing={{ base: 8, md: 16 }} w="100%">
           <HStack justify="center" spacing={{ base: 16, md: 32 }} wrap="wrap" w="100%" gap={"20rem"}>
-            {object.map((item) => (
+            {objects.map((item) => (
               <VStack spacing={2} key={item.id} w={{ base: "100px", md: "80px" }} textAlign="center">
                 <Box w="80px" h="80px" display="flex" alignItems="center" justifyContent="center">
                   <Image src={item.img} alt={item.title} />
@@ -99,7 +109,7 @@ export function About() {
           </HStack>
 
           <HStack justify="center" spacing={{ base: 20, md: 40 }} wrap="wrap" w="100%" gap={"20rem"}>
-            {secondObject.map((item) => (
+            {secondObjects.map((item) => (
               <VStack spacing={2} key={item.id} w={{ base: "100px", md: "80px" }} textAlign="center">
                 <Box w="80px" h="80px" display="flex" alignItems="center" justifyContent="center">
                   <Image src={item.img} alt={item.title} />

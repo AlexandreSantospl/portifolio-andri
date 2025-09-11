@@ -10,10 +10,12 @@ export default function FirstHeader({
   setSlug,
   setPage,
   page,
+  slug,
 }: {
   setSlug: (slug: string | undefined) => void;
   setPage: (page: "home" | "about") => void;
   page: "home" | "about";
+  slug: string | undefined;
 }) {
   const [, setActiveSection] = useState("homePage");
 
@@ -44,7 +46,12 @@ export default function FirstHeader({
     if (sectionKey === "homePage") {
       setSlug(undefined);
       setPage("home");
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     } else if (sectionKey === "about") {
+      setSlug(undefined);
       setPage("about");
     } else if (sectionKey === "projects") {
       if (page === 'about') {
@@ -57,8 +64,8 @@ export default function FirstHeader({
       if (page === 'about') {
         setPage("home");
         setTimeout(() => {
-          const footer = document.getElementById("rodape") || document.body;
-          footer.scrollIntoView({ behavior: "smooth" });
+            const footer = document.getElementById("rodape") || document.body;
+            footer.scrollIntoView({ behavior: "smooth" });
         }, 100);
       } else {
         const footer = document.getElementById("rodape") || document.body;
@@ -72,6 +79,13 @@ export default function FirstHeader({
   const currentLang = ["pt", "en", "es"].includes(i18n.language)
     ? (i18n.language as "pt" | "en" | "es")
     : "pt";
+
+  let activeSection = "homePage";
+  if (page === "about") {
+    activeSection = "about";
+  } else if (slug) {
+    activeSection = "projects";
+  }
 
   return (
     <Flex
@@ -114,7 +128,7 @@ export default function FirstHeader({
             <Text
               onClick={() => scrollToSection(section.key)}
               cursor="pointer"
-              fontWeight={"light"}
+              fontWeight={section.key === activeSection ? "bold" : "light"}
               fontSize={"1.125rem"}
               fontFamily={"Poppins"}
               lineHeight={"28px"}
@@ -130,9 +144,9 @@ export default function FirstHeader({
           style={{ background: 'transparent', border: 'none', fontSize: '1.5rem' }}
         >
           {currentLang === "pt" ? (
-            <ReactCountryFlag countryCode="US" svg style={{ fontSize: '2rem', lineHeight: '2rem' }} />
+            <ReactCountryFlag countryCode="US" svg style={{ fontSize: '2em', lineHeight: '2em' }} />
           ) : (
-            <ReactCountryFlag countryCode="BR" svg style={{ fontSize: '2rem', lineHeight: '2rem' }} />
+            <ReactCountryFlag countryCode="BR" svg style={{ fontSize: '2em', lineHeight: '2em' }} />
           )}
         </Button>
       </Flex>

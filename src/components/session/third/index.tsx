@@ -2,8 +2,8 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { ProjectCard } from "../../../shared/components/projectCard";
 import project1 from "../../../assets/imagens/project1.png";
 import project2 from "../../../assets/imagens/project2.png";
-import project3 from "../../../assets/imagens/project3.png";
-import project4 from "../../../assets/imagens/project4.png";
+import project3 from "../../../assets/imagens/luna.svg";
+import project4 from "../../../assets/imagens/lifesync.svg";
 import { FeatureKeys } from "../../../shared/constants/projects";
 import { getTranslatedMessage } from "../../../shared/i18n/i18n";
 
