@@ -6,7 +6,7 @@ import {
   useBreakpointValue,
   Box,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getTranslatedMessage } from "../../shared/i18n/i18n";
 import { FeatureKeys } from "../constants/projects";
 
@@ -30,47 +30,12 @@ export const ProjectCard = ({
   const isImageLeft = imagePosition === "left";
   const [showFullDescription, setShowFullDescription] = useState(false);
 
-  const designerFontSize = useBreakpointValue({
-    base: "1.1rem",
-    md: "1.3rem",
-    xl: "1.5rem",
-  });
+  const designerFontSize = useBreakpointValue({ base: "1rem", md: "1.1rem", lg: "1.2rem", xl: "1.3rem" });
+  const titleFontSize = useBreakpointValue({ base: "1.5rem", md: "2rem", lg: "2.5rem", xl: "3rem" });
+  const descFontSize = useBreakpointValue({ base: "1rem", md: "1.1rem", lg: "1.2rem", xl: "1.3rem" });
+  const buttonFontSize = useBreakpointValue({ base: "0.9rem", md: "1rem", lg: "1.05rem", xl: "1.1rem" });
 
-  const titleFontSize = useBreakpointValue({
-    base: "2rem",
-    md: "2.5rem",
-    xl: "3rem",
-  });
-
-  const descFontSize = useBreakpointValue({
-    base: "1.1rem",
-    md: "1.3rem",
-    xl: "1.5rem",
-  });
-
-  const buttonFontSize = useBreakpointValue({
-    base: "1rem",
-    md: "1.05rem",
-    xl: "1.15rem",
-  });
-
-  function useIsWidthAtLeast1100() {
-    const [isAtLeast1100, setIsAtLeast1100] = useState(false);
-
-    useEffect(() => {
-      function handleResize() {
-        setIsAtLeast1100(window.innerWidth >= 1100);
-      }
-
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    return isAtLeast1100;
-  }
-
-  const isLgOrUp = useIsWidthAtLeast1100();
+  const isLgOrUp = useBreakpointValue({ base: false, lg: true });
 
   const toggleDescription = () => setShowFullDescription((prev) => !prev);
 
@@ -79,7 +44,7 @@ export const ProjectCard = ({
   return (
     <Flex
       w="100%"
-      direction={["column", "column", isImageLeft ? "row" : "row-reverse"]}
+      direction={{ base: "column", lg: isImageLeft ? "row" : "row-reverse" }}
       align="center"
       justify="space-between"
       bgColor="white"
@@ -88,19 +53,20 @@ export const ProjectCard = ({
       <Image
         src={image}
         alt={title}
-        w={["100%", "100%", "50%"]}
-        minH="55vh"
-        borderRightRadius={imagePosition === "left" ? "0" : "24px"}
-        borderLeftRadius={imagePosition === "right" ? "0" : "24px"}
+        w={{ base: "100%", lg: "50%" }}
+        minH={{ base: "auto", md: "40vh", lg: "55vh" }}
+        borderRightRadius={{ base: "24px", lg: imagePosition === "left" ? "0" : "24px" }}
+        borderLeftRadius={{ base: "24px", lg: imagePosition === "right" ? "0" : "24px" }}
         objectFit="cover"
       />
 
       <Flex
-        w={["100%", "100%", "50%"]}
+        w={{ base: "100%", lg: "50%" }}
         direction="column"
         justify="center"
         align="flex-start"
-        px={["2rem", "3rem", "4.375rem"]}
+        px={{ base: "1.5rem", md: "2rem", lg: "3rem", xl: "4.375rem" }}
+        py={{ base: "1.5rem", lg: 0 }}
         position="relative"
       >
         <Text
@@ -112,7 +78,7 @@ export const ProjectCard = ({
           {getTranslatedMessage("jobTitle")}
         </Text>
         <Text
-          pt="0.75rem"
+          pt={{ base: "0.5rem", md: "0.75rem" }}
           color="black"
           fontFamily="Poppins"
           fontWeight="bold"
@@ -125,7 +91,7 @@ export const ProjectCard = ({
           color="#828282"
           fontFamily="Nunito"
           fontSize={descFontSize}
-          pt="2rem"
+          pt={{ base: "1rem", md: "1.5rem", lg: "2rem" }}
           maxH={
             shouldShowToggle ? (showFullDescription ? "200px" : "4rem") : "auto"
           }
@@ -175,7 +141,7 @@ export const ProjectCard = ({
           fontFamily="Nunito"
           fontSize={buttonFontSize}
           fontWeight="bold"
-          mt="2.5rem"
+          mt={{ base: "1.5rem", md: "2rem", lg: "2.5rem" }}
           _hover={{ bg: "#885784", color: "white" }}
         >
           <Text px="0.5rem">{getTranslatedMessage("seeProject")}</Text>

@@ -4,40 +4,45 @@ import myPicture from "../../../assets/imagens/myPicture.png";
 
 export default function Second() {
   const titleFontSize = useBreakpointValue({
-    base: "2.5rem",
-    md: "2rem",
+    base: "2rem",
+    md: "2.5rem",
     lg: "3rem",
+    xl: "3.5rem",
+    "2xl": "4rem",
   });
   const descriptionFontSize = useBreakpointValue({
     base: "1rem",
-    md: "1.25rem",
-    lg: "1.5rem",
+    md: "1.1rem",
+    lg: "1.25rem",
+    xl: "1.4rem",
+    "2xl": "1.6rem",
   });
 
   return (
     <Flex
       w="100%"
-      h="100vh"
+      h={{ base: "auto", md: "100vh" }}
       align="center"
       justify="space-between"
-      pl="7.5%"
-      pr="0"
+      pl={{ base: "4%", md: "6%", lg: "7.5%" }}
+      pr={{ base: "4%", md: "0" }}
       position="relative"
       overflow="hidden"
+      direction={{ base: "column", md: "row" }}
+      py={{ base: 8, md: 0 }}
     >
       <Flex
-        w="35%"
+        w={{ base: "100%", md: "35%" }}
         h="100%"
-        align="flex-start"
+        align={{ base: "center", md: "flex-start" }}
         justify="center"
         flexDir="column"
-        textAlign="left"
-        fontSize="3.65rem"
+        textAlign={{ base: "center", md: "left" }}
         zIndex={1}
       >
         <Text
           color="#885784"
-          fontSize="1.25rem"
+          fontSize={{ base: "1rem", md: "1.1rem", lg: "1.25rem" }}
           fontWeight="bold"
           fontFamily="Nunito"
         >
@@ -56,7 +61,7 @@ export default function Second() {
           color="#828282"
           fontFamily="Nunito"
           fontSize={descriptionFontSize}
-          pt="2rem"
+          pt={{ base: "1rem", md: "1.5rem", lg: "2rem" }}
         >
           {getTranslatedMessage("shortBio")}
         </Text>

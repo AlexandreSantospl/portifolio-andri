@@ -22,6 +22,9 @@ export function About() {
     fontWeight: "bold",
     fontSize: titleFontSize,
   }
+  const aboutFontSize = useBreakpointValue({ base: "2rem", md: "2.5rem", lg: "3rem", xl: "3.5rem", "2xl": "4rem" });
+  const aboutDescriptionFontSize = useBreakpointValue({ base: "0.9rem", md: "1rem", lg: "1.1rem", xl: "1.2rem", "2xl": "1.4rem" });
+
   const descriptionFontSize = useBreakpointValue({ base: "0.9rem", md: "1rem", lg: "1.25rem" });
   const expTitleFontSize = useBreakpointValue({ base: "1.5rem", md: "1.5rem", lg: "1.5rem" });
   const expTitleStyle = {
@@ -65,14 +68,14 @@ export function About() {
             color="black"
             fontFamily="Playfair Display"
             fontWeight="bold"
-            fontSize={titleFontSize}
+            fontSize={aboutFontSize}
           >
             {getTranslatedMessage("about")}
           </Text>
           <Text
             color="#828282"
             fontFamily="Nunito"
-            fontSize={descriptionFontSize}
+            fontSize={aboutDescriptionFontSize}
             pt={4}
             dangerouslySetInnerHTML={{ __html: getTranslatedMessage("aboutMe") }}
           />

@@ -39,18 +39,18 @@ export const FeatureSection = ({
       hidden={slug !== slugSelected}
       key={slugSelected}
       direction="column"
-      gap="32px"
+      gap={{ base: "16px", md: "24px", lg: "32px" }}
       w={"100%"}
-      px={"7.5rem"}
-      pt={"8.125rem"}
+      px={{ base: "1.5rem", md: "3rem", lg: "5rem", xl: "7.5rem" }}
+      pt={{ base: "4rem", md: "6rem", lg: "8.125rem" }}
     >
-      <Flex w="100%" justify={"space-between"}>
+      <Flex w="100%" justify={"space-between"} direction={{ base: "column", md: "row" }} gap={{ base: "16px", md: 0 }}>
         <Flex
-          w="40%"
+          w={{ base: "100%", md: "40%" }}
           h={"100%"}
           direction="column"
           justify="center"
-          gap="16px"
+          gap={{ base: "8px", md: "12px", lg: "16px" }}
           align={"start"}
         >
           <Text
@@ -58,14 +58,14 @@ export const FeatureSection = ({
             color="black"
             fontFamily="Playfair Display"
             fontWeight="bold"
-            fontSize={"4rem"}
+            fontSize={{ base: "2.5rem", md: "3rem", lg: "4rem" }}
           >
             {title}
           </Text>
 
           <Box
             color="#828282"
-            fontSize="1.125rem"
+            fontSize={{ base: "1rem", md: "1.125rem" }}
             fontFamily={"Poppins"}
             dangerouslySetInnerHTML={{ __html: descriptionHtml }}
           />
@@ -79,18 +79,18 @@ export const FeatureSection = ({
             color="#885784"
             fontFamily="Nunito"
             fontWeight="bold"
-            mt="2.5rem"
+            mt={{ base: "1.5rem", md: "2rem", lg: "2.5rem" }}
             _hover={{ bg: "#885784", color: "white" }}
           >
             {buttonLabel}
           </Button>
         </Flex>
 
-        <Box w="50%">
+        <Box w={{ base: "100%", md: "50%" }}>
           <Image
             src={imageMain}
             w="100%"
-            h="80%"
+            h={{ base: "auto", md: "80%" }}
             objectFit="cover"
             borderRadius={"24px"}
             fallback={<Skeleton {...skeletonProps} />}
@@ -98,8 +98,8 @@ export const FeatureSection = ({
         </Box>
       </Flex>
 
-      <Flex w="100%" gap="38px">
-        <Flex w="50%" direction="column" gap="48px">
+      <Flex w="100%" gap={{ base: "16px", md: "24px", lg: "38px" }} direction={{ base: "column", md: "row" }}>
+        <Flex w={{ base: "100%", md: "50%" }} direction="column" gap={{ base: "16px", md: "24px", lg: "48px" }}>
           <Image
             src={imageBottomLeftTop}
             w="100%"
@@ -114,11 +114,11 @@ export const FeatureSection = ({
           />
         </Flex>
 
-        <Flex w="50%" justify="center" align="center">
+        <Flex w={{ base: "100%", md: "50%" }} justify="center" align="center">
           <Image
             src={imageBottomRight}
             w="100%"
-            h={"90%"}
+            h={{ base: "auto", md: "90%" }}
             fallback={<Skeleton {...skeletonProps} />}
           />
         </Flex>

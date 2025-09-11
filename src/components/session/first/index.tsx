@@ -1,4 +1,5 @@
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, Text, Box, Menu, MenuButton, MenuList, MenuItem, IconButton } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { getTranslatedMessage } from "../../../shared/i18n/i18n";
@@ -64,8 +65,8 @@ export default function FirstHeader({
       if (page === 'about') {
         setPage("home");
         setTimeout(() => {
-            const footer = document.getElementById("rodape") || document.body;
-            footer.scrollIntoView({ behavior: "smooth" });
+          const footer = document.getElementById("rodape") || document.body;
+          footer.scrollIntoView({ behavior: "smooth" });
         }, 100);
       } else {
         const footer = document.getElementById("rodape") || document.body;
@@ -95,21 +96,21 @@ export default function FirstHeader({
       left={0}
       zIndex={1000}
       w="100%"
-      h="70px"
+      h={{ base: "60px", md: "70px" }}
       align="center"
       justify="space-between"
-      px="7.5%"
-      fontSize="1.25rem"
+      px={{ base: "4%", md: "6%", lg: "7.5%" }}
+      fontSize={{ base: "1rem", md: "1.1rem", lg: "1.25rem" }}
       fontFamily="Poppins"
     >
       <Flex
         flexDir="column"
         justify="center"
-        w="30%"
+        w={{ base: "50%", md: "30%" }}
         onClick={() => scrollToSection("homePage")}
       >
         <Text
-          fontSize={"1.125rem"}
+          fontSize={{ base: "1rem", md: "1.125rem" }}
           fontFamily={"Poppins"}
           lineHeight={"180%"}
           color={"black"}
@@ -118,37 +119,58 @@ export default function FirstHeader({
         </Text>
       </Flex>
 
-      <Flex gap={"2rem"} display={{ base: "none", md: "flex" }} alignItems={"center"}>
-        {sections.map((section) => (
-          <motion.div
-            key={section.key}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Text
-              onClick={() => scrollToSection(section.key)}
-              cursor="pointer"
-              fontWeight={section.key === activeSection ? "bold" : "light"}
-              fontSize={"1.125rem"}
-              fontFamily={"Poppins"}
-              lineHeight={"28px"}
-              color={"black"}
-              position="relative"
+      <Flex gap={{ base: "1rem", md: "1.5rem", lg: "2rem" }} alignItems={"center"}>
+        <Flex display={{ base: "none", md: "flex" }} gap={{ base: "1rem", md: "1.5rem", lg: "2rem" }}>
+          {sections.map((section) => (
+            <motion.div
+              key={section.key}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {section.label}
-            </Text>
-          </motion.div>
-        ))}
+              <Text
+                onClick={() => scrollToSection(section.key)}
+                cursor="pointer"
+                fontWeight={section.key === activeSection ? "bold" : "light"}
+                fontSize={{ base: "1rem", md: "1.125rem" }}
+                fontFamily={"Poppins"}
+                lineHeight={{ base: "24px", md: "28px" }}
+                color={"black"}
+                position="relative"
+              >
+                {section.label}
+              </Text>
+            </motion.div>
+          ))}
+        </Flex>
         <Button
           onClick={() => i18n.changeLanguage(currentLang === "pt" ? "en" : "pt")}
           style={{ background: 'transparent', border: 'none', fontSize: '1.5rem' }}
         >
           {currentLang === "pt" ? (
-            <ReactCountryFlag countryCode="US" svg style={{ fontSize: '2em', lineHeight: '2em' }} />
+            <ReactCountryFlag countryCode="BR" svg style={{ fontSize: '2rem', lineHeight: '2rem' }} />
+
           ) : (
-            <ReactCountryFlag countryCode="BR" svg style={{ fontSize: '2em', lineHeight: '2em' }} />
+            <ReactCountryFlag countryCode="US" svg style={{ fontSize: '2rem', lineHeight: '2rem' }} />
+
           )}
         </Button>
+        <Box display={{ base: "block", md: "none" }}>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+            />
+            <MenuList>
+              {sections.map((section) => (
+                <MenuItem key={section.key} onClick={() => scrollToSection(section.key)}>
+                  {section.label}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
+        </Box>
       </Flex>
     </Flex>
   );

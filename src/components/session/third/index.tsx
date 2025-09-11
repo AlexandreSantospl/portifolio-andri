@@ -56,10 +56,10 @@ export default function Third({ onSlugChange }: Props) {
 
   return (
     <Flex
-      w={"70%"}
+      w={{ base: "90%", md: "80%", lg: "70%" }}
       h={"100%"}
-      pt={"6rem"}
-      gap="5rem"
+      pt={{ base: "4rem", md: "5rem", lg: "6rem" }}
+      gap={{ base: "3rem", md: "4rem", lg: "5rem" }}
       align="center"
       justify="space-evenly"
       textColor={"gray.100"}
@@ -70,7 +70,7 @@ export default function Third({ onSlugChange }: Props) {
       <Box textAlign="center" w="fit-content" mx="auto" id="projetos">
         <Text
           fontFamily={"Playfair Display"}
-          fontSize={"4rem"}
+          fontSize={{ base: "2.5rem", md: "3rem", lg: "4rem" }}
           fontWeight={"bold"}
           color={"black"}
         >
@@ -78,16 +78,16 @@ export default function Third({ onSlugChange }: Props) {
         </Text>
 
         <Box
-          w="60%"
-          h="4px"
+          w={{ base: "80%", md: "70%", lg: "60%" }}
+          h={{ base: "3px", md: "4px" }}
           bg="#885784"
           mx="auto"
-          mt="0.25rem"
+          mt={{ base: "0.2rem", md: "0.25rem" }}
           borderRadius="2px"
         />
       </Box>
 
-      <Flex flexDir={"column"} gap={"5rem"} pb={"10rem"}>
+      <Flex flexDir={"column"} gap={{ base: "3rem", md: "4rem", lg: "5rem" }} pb={{ base: "4rem", md: "7rem", lg: "10rem" }}>
         {projects.map((project, index) => (
           <ProjectCard
             key={index}

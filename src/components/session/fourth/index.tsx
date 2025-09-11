@@ -52,12 +52,12 @@ export default function Fourth() {
 
   return (
     <Flex
-      w={"70%"}
+      w={{ base: "90%", md: "80%", lg: "70%" }}
       h={"100%"}
-      pt={"6rem"}
-      gap="3rem"
+      pt={{ base: "4rem", md: "5rem", lg: "6rem" }}
+      gap={{ base: "2rem", md: "2.5rem", lg: "3rem" }}
       align="center"
-      pb={"5rem"}
+      pb={{ base: "3rem", md: "4rem", lg: "5rem" }}
       justify="space-evenly"
       textColor={"gray.100"}
       fontSize={"3.65rem"}
@@ -65,18 +65,18 @@ export default function Fourth() {
       overflow="hidden"
       id="rodape"
     >
-      <Flex flexDir="row" gap="2rem">
+      <Flex flexDir="row" gap={{ base: "1rem", md: "1.5rem", lg: "2rem" }}>
         {contact.map((contact) => (
           <IconButton key={contact.link}>
             <a href={contact.link} target="_blank" rel="noopener noreferrer">
-              <Image src={contact.img} alt={contact.link} />
+              <Image src={contact.img} alt={contact.link} w={{ base: "32px", md: "40px", lg: "48px" }} h={{ base: "32px", md: "40px", lg: "48px" }} />
             </a>
           </IconButton>
         ))}
       </Flex>
 
       <Flex>
-        <Text fontFamily={"Poppins"} fontSize={"1rem"} color={"#828282"}>
+        <Text fontFamily={"Poppins"} fontSize={{ base: "0.8rem", md: "0.9rem", lg: "1rem" }} color={"#828282"}>
           Andrieli Brentano 2025
         </Text>
       </Flex>
