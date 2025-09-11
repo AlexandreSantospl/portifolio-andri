@@ -28,51 +28,53 @@ type FeatureSectionData = {
   imageBottomRight: string;
 };
 
-export const featureSections: FeatureSectionData[] = [
-  {
-    slug: "isotron",
-    title: getTranslatedMessage("isotronTitle"),
-    descriptionHtml: getTranslatedMessage("isotronDetailedDescription"),
-    buttonLink: "https://example.com",
-    buttonLabel: getTranslatedMessage("accessBehance"),
-    imageMain: firstIsotron,
-    imageBottomLeftTop: secondIsotron,
-    imageBottomLeftBottom: thirtIsotron,
-    imageBottomRight: forthIsotron,
-  },
-  {
-    slug: "lifemed",
-    title: getTranslatedMessage("lifemedTitle"),
-    descriptionHtml: getTranslatedMessage("lifemedDetailedDescription"),
-    buttonLink: "https://example.com",
-    buttonLabel: getTranslatedMessage("accessBehance"),
-    imageMain: firstLifeMed,
-    imageBottomLeftTop: secondLifeMed,
-    imageBottomLeftBottom: thirdLifeMed,
-    imageBottomRight: fourthLifeMed,
-  },
-  {
-    slug: "luna",
-    title: getTranslatedMessage("lunaTitle"),
-    descriptionHtml: getTranslatedMessage("lunaDetailedDescription"),
-    buttonLink: "https://example.com",
-    buttonLabel: getTranslatedMessage("accessBehance"),
-    imageMain: firstLuna,
-    imageBottomLeftTop: secondLuna,
-    imageBottomLeftBottom: thirdLuna,
-    imageBottomRight: fourthLuna,
-  },
-  {
-    slug: "lifesync",
-    title: getTranslatedMessage("lifesyncTitle"),
-    descriptionHtml: getTranslatedMessage("lifesyncDetailedDescription"),
-    buttonLink: "https://example.com",
-    buttonLabel: getTranslatedMessage("accessBehance"),
-    imageMain: fristLifeSync,
-    imageBottomLeftTop: secondLifeSync,
-    imageBottomLeftBottom: thirdLifeSync,
-    imageBottomRight: fourthLifeSync,
-  },
-] as const;
+export function getFeatureSections(): FeatureSectionData[] {
+  return [
+    {
+      slug: "isotron",
+      title: getTranslatedMessage("isotronTitle"),
+      descriptionHtml: getTranslatedMessage("isotronDetailedDescription"),
+      buttonLink: "https://example.com",
+      buttonLabel: getTranslatedMessage("accessBehance"),
+      imageMain: firstIsotron,
+      imageBottomLeftTop: secondIsotron,
+      imageBottomLeftBottom: thirtIsotron,
+      imageBottomRight: forthIsotron,
+    },
+    {
+      slug: "lifemed",
+      title: getTranslatedMessage("lifemedTitle"),
+      descriptionHtml: getTranslatedMessage("lifemedDetailedDescription"),
+      buttonLink: "https://example.com",
+      buttonLabel: getTranslatedMessage("accessBehance"),
+      imageMain: firstLifeMed,
+      imageBottomLeftTop: secondLifeMed,
+      imageBottomLeftBottom: thirdLifeMed,
+      imageBottomRight: fourthLifeMed,
+    },
+    {
+      slug: "luna",
+      title: getTranslatedMessage("lunaTitle"),
+      descriptionHtml: getTranslatedMessage("lunaDetailedDescription"),
+      buttonLink: "https://example.com",
+      buttonLabel: getTranslatedMessage("accessBehance"),
+      imageMain: firstLuna,
+      imageBottomLeftTop: secondLuna,
+      imageBottomLeftBottom: thirdLuna,
+      imageBottomRight: fourthLuna,
+    },
+    {
+      slug: "lifesync",
+      title: getTranslatedMessage("lifesyncTitle"),
+      descriptionHtml: getTranslatedMessage("lifesyncDetailedDescription"),
+      buttonLink: "https://example.com",
+      buttonLabel: getTranslatedMessage("accessBehance"),
+      imageMain: fristLifeSync,
+      imageBottomLeftTop: secondLifeSync,
+      imageBottomLeftBottom: thirdLifeSync,
+      imageBottomRight: fourthLifeSync,
+    },
+  ] as const;
+}
 
-export type FeatureKeys = (typeof featureSections)[number]["slug"];
+export type FeatureKeys = ReturnType<typeof getFeatureSections>[number]["slug"];

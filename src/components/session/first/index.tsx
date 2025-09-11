@@ -4,13 +4,16 @@ import { motion } from "framer-motion";
 import { getTranslatedMessage } from "../../../shared/i18n/i18n";
 import { useTranslation } from "react-i18next";
 import { TranslationKeys } from "../../../shared/i18n/interface";
+import ReactCountryFlag from "react-country-flag";
 
 export default function FirstHeader({
   setSlug,
   setPage,
+  page,
 }: {
   setSlug: (slug: string | undefined) => void;
   setPage: (page: "home" | "about") => void;
+  page: "home" | "about";
 }) {
   const [, setActiveSection] = useState("homePage");
 
@@ -44,10 +47,23 @@ export default function FirstHeader({
     } else if (sectionKey === "about") {
       setPage("about");
     } else if (sectionKey === "projects") {
-      scrollToId("projetos", 100);
+      if (page === 'about') {
+        setPage("home");
+        setTimeout(() => scrollToId("projetos", 100), 100);
+      } else {
+        scrollToId("projetos", 100);
+      }
     } else if (sectionKey === "contact") {
-      const footer = document.getElementById("rodape") || document.body;
-      footer.scrollIntoView({ behavior: "smooth" });
+      if (page === 'about') {
+        setPage("home");
+        setTimeout(() => {
+          const footer = document.getElementById("rodape") || document.body;
+          footer.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else {
+        const footer = document.getElementById("rodape") || document.body;
+        footer.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -109,8 +125,15 @@ export default function FirstHeader({
             </Text>
           </motion.div>
         ))}
-        <Button onClick={() => i18n.changeLanguage(currentLang === "pt" ? "en" : "pt")}>
-          {currentLang === "pt" ? "EN" : "PT"}
+        <Button
+          onClick={() => i18n.changeLanguage(currentLang === "pt" ? "en" : "pt")}
+          style={{ background: 'transparent', border: 'none', fontSize: '1.5rem' }}
+        >
+          {currentLang === "pt" ? (
+            <ReactCountryFlag countryCode="US" svg style={{ fontSize: '2rem', lineHeight: '2rem' }} />
+          ) : (
+            <ReactCountryFlag countryCode="BR" svg style={{ fontSize: '2rem', lineHeight: '2rem' }} />
+          )}
         </Button>
       </Flex>
     </Flex>

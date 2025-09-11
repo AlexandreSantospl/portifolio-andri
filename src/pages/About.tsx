@@ -69,13 +69,13 @@ export function About() {
         </Flex>
         <Flex
           w="65%"
-          minH="80vh"
+          minH="100vh"
           align="flex-start"
           justify="flex-end"
           overflow="hidden"
           position="relative"
         >
-          <Image src={andri} w="90%" minH="55vh" objectFit="cover" transform="translateY(-2.75rem)" />
+          <Image src={andri} w="95%" minH="75vh" objectFit="cover" transform="translateX(3.25rem) translateY(-1rem)" />
         </Flex>
 
 
@@ -113,8 +113,8 @@ export function About() {
       </VStack>
 
       {/* Experiências acadêmicas */}
-      <VStack w="100%" mt={{ base: 12, md: 20 }} spacing={16} align="flex-start" px="5.5%">
-        <Flex align={'center'} justify={'center'} width={'100vw'}>
+      <VStack w="100%" mt={{ base: 12, md: 20 }} spacing={16} px="5.5%">
+        <Flex align={'center'} justify={'center'} width={'100vw'} >
           <Text style={titleStyle}>{getTranslatedMessage("academicExperience")}</Text>
 
         </Flex>
@@ -146,7 +146,7 @@ export function About() {
       </VStack>
 
       {/* Experiências profissionais */}
-      <VStack w="100%" mt={{ base: 12, md: 20 }} spacing={16} align="flex-start" px="5.5%">
+      <VStack w="100%" mt={{ base: 12, md: 20 }} spacing={16} px="5.5%">
         <Flex align={'center'} justify={'center'} width={'100vw'}>
           <Text style={titleStyle}>{getTranslatedMessage("professionalExperience")}</Text>
         </Flex>
@@ -166,7 +166,7 @@ export function About() {
       </VStack>
 
       {/* Idiomas */}
-      <VStack w="100%" mt={{ base: 12, md: 20 }} spacing={16} align="flex-start" px="5.5%">
+      <VStack w="100%" mt={{ base: 12, md: 20 }} spacing={16} px="5.5%">
         <Flex align={'center'} justify={'center'} width={'100vw'}>
           <Text style={titleStyle}>{getTranslatedMessage("languages")}</Text>
 

@@ -69,7 +69,7 @@ export default function Second() {
         justify="flex-end"
         overflow="hidden"
       >
-        <Image src={myPicture} w="100%" minH="75vh" />
+        <Image src={myPicture} w="90%" minH="75vh" />
       </Flex>
     </Flex>
   );
