@@ -94,6 +94,7 @@ export default function FirstHeader({
       position="fixed"
       top={0}
       left={0}
+      style={{ userSelect: 'none' }}
       zIndex={1000}
       w="100%"
       h={{ base: "60px", md: "70px" }}
