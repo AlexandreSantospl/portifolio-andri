@@ -1,10 +1,4 @@
 import { Box, Flex, Text, Image, VStack, HStack, useBreakpointValue } from "@chakra-ui/react";
-import ai from "../assets/icons/ai.svg";
-import figma from "../assets/icons/figma.svg";
-import id from "../assets/icons/id.svg";
-import or from "../assets/icons/or.svg";
-import ps from "../assets/icons/ps.svg";
-import andri from "../assets/imagens/andri-onda.svg";
 import { getTranslatedMessage } from "../shared/i18n/i18n";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -36,14 +30,14 @@ export function About() {
   const subHeadingFontSize = useBreakpointValue({ base: "1rem", md: "1.1rem", lg: "1.25rem" });
 
   const object = () => [
-    { id: 1, img: id, title: getTranslatedMessage("figma"), description: getTranslatedMessage("levelAdvanced") },
-    { id: 4, img: ai, title: getTranslatedMessage("adobeIllustrator"), description: getTranslatedMessage("levelIntermediate") },
-    { id: 5, img: ps, title: getTranslatedMessage("adobePhotoshop"), description: getTranslatedMessage("levelIntermediate") },
+    { id: 1, img: '/icons/id.svg', title: getTranslatedMessage("figma"), description: getTranslatedMessage("levelAdvanced") },
+    { id: 4, img: '/icons/ai.svg', title: getTranslatedMessage("adobeIllustrator"), description: getTranslatedMessage("levelIntermediate") },
+    { id: 5, img: '/icons/ps.svg', title: getTranslatedMessage("adobePhotoshop"), description: getTranslatedMessage("levelIntermediate") },
   ];
 
   const secondObject = () => [
-    { id: 2, img: figma, title: getTranslatedMessage("adobeInDesign"), description: getTranslatedMessage("levelBeginner") },
-    { id: 3, img: or, title: getTranslatedMessage("blender"), description: getTranslatedMessage("levelBeginner") },
+    { id: 2, img: '/icons/figma.svg', title: getTranslatedMessage("adobeInDesign"), description: getTranslatedMessage("levelBeginner") },
+    { id: 3, img: '/icons/or.svg', title: getTranslatedMessage("blender"), description: getTranslatedMessage("levelBeginner") },
   ];
 
   const objects = useMemo(() => object(), [i18n.language]);
@@ -88,7 +82,7 @@ export function About() {
           overflow="hidden"
           position="relative"
         >
-          <Image src={andri} w="95%" minH="75vh" objectFit="cover" transform="translateX(3.25rem) translateY(-1rem)" />
+          <Image src={'/imagens/andri-onda.svg'} w="95%" minH="75vh" objectFit="cover" transform="translateX(3.25rem) translateY(-1rem)" />
         </Flex>
 
 

@@ -1,19 +1,3 @@
-import firstIsotron from "../../../assets/projects/isotron/first.svg";
-import secondIsotron from "../../../assets/projects/isotron/second.svg";
-import thirtIsotron from "../../../assets/projects/isotron/third.svg";
-import forthIsotron from "../../../assets/projects/isotron/fourth.svg";
-import firstLifeMed from "../../../assets/projects/lifemed/firstLifeMed.svg";
-import secondLifeMed from "../../../assets/projects/lifemed/secondLifeMed.svg";
-import thirdLifeMed from "../../../assets/projects/lifemed/thirdLifeMed.svg";
-import fourthLifeMed from "../../../assets/projects/lifemed/fourthLifeMed.svg";
-import firstLuna from "../../../assets/projects/luna/firstLuna.svg";
-import secondLuna from "../../../assets/projects/luna/secondLuna.svg";
-import thirdLuna from "../../../assets/projects/luna/thirdLuna.svg";
-import fourthLuna from "../../../assets/projects/luna/fourthLuna.svg";
-import fristLifeSync from "../../../assets/projects/lifesync/firstLifeSync.svg";
-import secondLifeSync from "../../../assets/projects/lifesync/secondLifeSync.svg";
-import thirdLifeSync from "../../../assets/projects/lifesync/thirdLifeSync.svg";
-import fourthLifeSync from "../../../assets/projects/lifesync/fourthLifeSync.svg";
 import { getTranslatedMessage } from "../../i18n/i18n";
 
 type FeatureSectionData = {
@@ -36,10 +20,10 @@ export function getFeatureSections(): FeatureSectionData[] {
       descriptionHtml: getTranslatedMessage("isotronDetailedDescription"),
       buttonLink: "https://example.com",
       buttonLabel: getTranslatedMessage("accessBehance"),
-      imageMain: firstIsotron,
-      imageBottomLeftTop: secondIsotron,
-      imageBottomLeftBottom: thirtIsotron,
-      imageBottomRight: forthIsotron,
+      imageMain: "/projects/isotron/first.svg",
+      imageBottomLeftTop: "/projects/isotron/second.svg",
+      imageBottomLeftBottom: "/projects/isotron/third.svg",
+      imageBottomRight: "/projects/isotron/fourth.svg",
     },
     {
       slug: "lifemed",
@@ -47,10 +31,10 @@ export function getFeatureSections(): FeatureSectionData[] {
       descriptionHtml: getTranslatedMessage("lifemedDetailedDescription"),
       buttonLink: "https://example.com",
       buttonLabel: getTranslatedMessage("accessBehance"),
-      imageMain: firstLifeMed,
-      imageBottomLeftTop: secondLifeMed,
-      imageBottomLeftBottom: thirdLifeMed,
-      imageBottomRight: fourthLifeMed,
+      imageMain: "/projects/lifemed/firstLifeMed.svg",
+      imageBottomLeftTop: "/projects/lifemed/secondLifeMed.svg",
+      imageBottomLeftBottom: "/projects/lifemed/thirdLifeMed.svg",
+      imageBottomRight: "/projects/lifemed/fourthLifeMed.svg",
     },
     {
       slug: "luna",
@@ -58,10 +42,10 @@ export function getFeatureSections(): FeatureSectionData[] {
       descriptionHtml: getTranslatedMessage("lunaDetailedDescription"),
       buttonLink: "https://example.com",
       buttonLabel: getTranslatedMessage("accessBehance"),
-      imageMain: firstLuna,
-      imageBottomLeftTop: secondLuna,
-      imageBottomLeftBottom: thirdLuna,
-      imageBottomRight: fourthLuna,
+      imageMain: "/projects/luna/firstLuna.svg",
+      imageBottomLeftTop: "/projects/luna/secondLuna.svg",
+      imageBottomLeftBottom: "/projects/luna/thirdLuna.svg",
+      imageBottomRight: "/projects/luna/fourthLuna.svg",
     },
     {
       slug: "lifesync",
@@ -69,10 +53,10 @@ export function getFeatureSections(): FeatureSectionData[] {
       descriptionHtml: getTranslatedMessage("lifesyncDetailedDescription"),
       buttonLink: "https://example.com",
       buttonLabel: getTranslatedMessage("accessBehance"),
-      imageMain: fristLifeSync,
-      imageBottomLeftTop: secondLifeSync,
-      imageBottomLeftBottom: thirdLifeSync,
-      imageBottomRight: fourthLifeSync,
+      imageMain: "/projects/lifesync/firstLifeSync.svg",
+      imageBottomLeftTop: "/projects/lifesync/secondLifeSync.svg",
+      imageBottomLeftBottom: "/projects/lifesync/thirdLifeSync.svg",
+      imageBottomRight: "/projects/lifesync/fourthLifeSync.svg",
     },
   ] as const;
 }

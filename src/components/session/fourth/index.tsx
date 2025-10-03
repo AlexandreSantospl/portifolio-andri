@@ -1,9 +1,5 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
-import be from "../../../assets/icons/be.svg";
-import email from "../../../assets/icons/email.svg";
-import instagram from "../../../assets/icons/instagram.svg";
-import linkedin from "../../../assets/icons/linkedin.svg";
-import wpp from "../../../assets/icons/wpp.svg";
+
 import styled from "@emotion/styled";
 
 const IconButton = styled.div`
@@ -29,23 +25,23 @@ export default function Fourth() {
     link: string;
   }[] = [
       {
-        img: instagram,
+        img: '/icons/instagram.svg',
         link: "https://www.linkedin.com/in/andrieli-brentano",
       },
       {
-        img: linkedin,
+        img: '/icons/linkedin.svg',
         link: "https://www.instagram.com/andri_brentano?igsh=ZnNmZTA3OXV4YW9i",
       },
       {
-        img: be,
+        img: '/icons/be.svg',
         link: "https://www.behance.net/andrielbrentan",
       },
       {
-        img: email,
+        img: '/icons/email.svg',
         link: "mailto:andri.brentano@gmail.com",
       },
       {
-        img: wpp,
+        img: '/icons/wpp.svg',
         link: "https://wa.me/5191459386",
       },
     ];

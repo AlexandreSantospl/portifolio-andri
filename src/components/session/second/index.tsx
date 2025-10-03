@@ -1,6 +1,5 @@
 import { Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 import { getTranslatedMessage } from "../../../shared/i18n/i18n";
-import myPicture from "../../../assets/imagens/myPicture.png";
 
 export default function Second() {
   const titleFontSize = useBreakpointValue({
@@ -74,7 +73,7 @@ export default function Second() {
         justify="flex-end"
         overflow="hidden"
       >
-        <Image src={myPicture} w="90%" minH="75vh" />
+        <Image src={'/imagens/myPicture.png'} w="90%" minH="75vh" />
       </Flex>
     </Flex>
   );

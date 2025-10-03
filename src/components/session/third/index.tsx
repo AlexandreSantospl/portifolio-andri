@@ -1,9 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { ProjectCard } from "../../../shared/components/projectCard";
-import project1 from "../../../assets/imagens/project1.png";
-import project2 from "../../../assets/imagens/project2.png";
-import project3 from "../../../assets/imagens/luna.svg";
-import project4 from "../../../assets/imagens/lifesync.svg";
+
 import { FeatureKeys } from "../../../shared/constants/projects";
 import { getTranslatedMessage } from "../../../shared/i18n/i18n";
 
@@ -23,7 +20,7 @@ export default function Third({ onSlugChange }: Props) {
       {
         slug: "isotron",
         title: getTranslatedMessage("isotronTitle"),
-        img: project1,
+        img: '/imagens/project1.png',
         description: getTranslatedMessage("isotronDescription"),
         link: "isotron",
         imagePosition: "right",
@@ -31,7 +28,7 @@ export default function Third({ onSlugChange }: Props) {
       {
         slug: "lifemed",
         title: getTranslatedMessage("lifemedTitle"),
-        img: project2,
+        img: '/imagens/project2.png',
         description: getTranslatedMessage("lifemedDescription"),
         link: "lifemed",
         imagePosition: "left",
@@ -39,7 +36,7 @@ export default function Third({ onSlugChange }: Props) {
       {
         slug: "luna",
         title: getTranslatedMessage("lunaTitle"),
-        img: project3,
+        img: '/imagens/luna.svg',
         description: getTranslatedMessage("lunaDescription"),
         link: "luna",
         imagePosition: "right",
@@ -47,7 +44,7 @@ export default function Third({ onSlugChange }: Props) {
       {
         slug: "lifesync",
         title: getTranslatedMessage("lifesyncTitle"),
-        img: project4,
+        img: '/imagens/lifesync.svg',
         description: getTranslatedMessage("lifesyncDescription"),
         link: "lifesync",
         imagePosition: "left",
